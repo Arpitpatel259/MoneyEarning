@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "987861361430",
+    "firebase_url": "https://moneyearning-141ab-default-rtdb.firebaseio.com",
+    "project_id": "moneyearning-141ab",
+    "storage_bucket": "moneyearning-141ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987861361430:android:10df9df736d0fb04d26637",
+        "android_client_info": {
+          "package_name": "com.example.earn_money"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "987861361430-8i7nqpr4lth3gu45h3tamgrcgb0p2lol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxFmzoFt47TugqL9ZzFItMhioAhK3f8zU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "987861361430-8i7nqpr4lth3gu45h3tamgrcgb0p2lol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

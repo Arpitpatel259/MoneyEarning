@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/WinningAmount"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/mme_bg_dialog"
+        android:orientation="vertical"
+        android:padding="10dp"
+        tools:ignore="UselessParent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_actionBar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/succesfullpayment" />
+
+        <TextView
+            android:id="@+id/tvAmountWinning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/rs_50"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/congratulation"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/regular"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="@string/amount_will_be_added_to_your_winings"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/tvCancela"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_weight="1"
+                android:background="@drawable/mme_bg_app_btn_rounded_gray"
+                android:fontFamily="@font/medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:onClick="CancleData"
+                android:text="@string/cancel"
+                android:textColor="#000000"
+                android:textSize="@dimen/_13ssp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <View
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvWin"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_38sdp"
+                android:layout_weight="1"
+                android:background="@drawable/mme_bg_app_btn_rounded_red"
+                android:fontFamily="@font/medium"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:onClick="UpdateData"
+                android:text="@string/collect_amount"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

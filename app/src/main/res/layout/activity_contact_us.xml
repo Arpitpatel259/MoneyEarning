@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Contact_Us">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/background">
+
+        <ImageView
+            android:id="@+id/imgViewBack1"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:padding="@dimen/_14sdp"
+            android:src="@drawable/mme_back_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:text="@string/contact_us"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etName"
+                style="@style/edittext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:autofillHints=""
+                android:hint="@string/enter_name"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:padding="@dimen/dimen_15dp"
+                android:textColor="@color/black"
+                android:textColorHint="#D32F2F"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/edittext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:autofillHints=""
+                android:hint="@string/enter_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:padding="@dimen/dimen_15dp"
+                android:textColor="@color/black"
+                android:textColorHint="#D32F2F"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <EditText
+                android:id="@+id/etMessage"
+                style="@style/edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:autofillHints=""
+                android:gravity="top"
+                android:hint="@string/message"
+                android:inputType="textMultiLine"
+                android:lines="6"
+                android:padding="@dimen/dimen_15dp"
+                android:textColor="@color/black"
+                android:textColorHint="#D32F2F"
+                android:textSize="18sp"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSend"
+                style="@style/ButtonRoundedWhite"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/send"
+                android:textColor="#00838F"
+                android:textSize="18sp"
+                tools:ignore="VisualLintButtonSize" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/semibold"
+                    android:gravity="center"
+                    android:padding="5sp"
+                    android:text="@string/contact_us"
+                    android:textColor="#00838F"
+                    android:textSize="@dimen/_18ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:autoLink="email"
+                    android:fontFamily="@font/josefinsans_regular"
+                    android:minHeight="48dp"
+                    android:text="@string/strContactUsLine1"
+                    android:textColor="#0277BD"
+                    android:textColorLink="#FF0000"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:autoLink="phone"
+                    android:fontFamily="@font/regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/strContactUsLine2"
+                    android:textColor="#0277BD"
+                    android:textSize="@dimen/_13ssp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTermsAndCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_vertical|center_horizontal|center"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/regular"
+                android:gravity="bottom|center_vertical|center_horizontal|center"
+                android:includeFontPadding="false"
+                android:text="@string/strContactTerms"
+                android:textColor="#0277BD"
+                android:textColorLink="@color/white"
+                android:textSize="@dimen/_13ssp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

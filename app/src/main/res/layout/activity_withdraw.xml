@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Withdraw">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@color/background">
+
+        <ImageView
+            android:id="@+id/imgViewBack"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="@dimen/_14sdp"
+            android:src="@drawable/mme_back_arrow"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/semibold"
+            android:gravity="center"
+            android:text="@string/wallet_balance"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvWallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:gravity="center"
+                android:paddingTop="@dimen/_13sdp"
+                android:text="@string/_1200"
+                android:textSize="@dimen/dimen_20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_14sp"
+                android:layout_marginRight="@dimen/dimen_14sp"
+                android:gravity="center"
+                android:padding="@dimen/_11ssp"
+                android:baselineAligned="false">
+
+                <LinearLayout
+                    android:id="@+id/llPhonePe"
+                    android:layout_width="@dimen/dimen_80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/mme_bg_app_unselected"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_50dp"
+                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/dimen_10dp"
+                        android:src="@drawable/mme_icon_phonepe"
+                        android:importantForAccessibility="no" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/phone_pe"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llGPay"
+                    android:layout_width="@dimen/dimen_80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_14sp"
+                    android:layout_marginRight="@dimen/dimen_14sp"
+                    android:layout_weight="1"
+                    android:background="@drawable/mme_bg_app_unselected"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_50dp"
+                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/dimen_10dp"
+                        android:src="@drawable/mme_icon_googlepay"
+                        android:importantForAccessibility="no" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/gpay"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llPaytm"
+                    android:layout_width="@dimen/dimen_80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/mme_bg_app_unselected"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_50dp"
+                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/dimen_10dp"
+                        android:src="@drawable/mme_icon_paytm"
+                        android:importantForAccessibility="no" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/regular"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/paytm"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtUpiID"
+                style="@style/edittext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:hint="@string/enter_phone_pe_number_upi_id"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="@dimen/dimen_15dp"
+                android:textColorHint="#D32F2F"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <EditText
+                android:id="@+id/edtAmount"
+                style="@style/edittext"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:focusable="false"
+                android:hint="@string/enter_amount"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="@dimen/dimen_15dp"
+                android:textColorHint="#D32F2F"
+                android:importantForAutofill="no"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnWithDraw"
+                style="@style/ButtonRoundedWhite"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="@string/withdraw"
+                android:textColor="#00838F"
+                android:textSize="@dimen/_18ssp"
+                tools:ignore="VisualLintButtonSize" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

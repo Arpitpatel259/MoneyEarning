@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="ButtonRoundWhite">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textColor">@color/main_theme</item>
+        <item name="android:gravity">left|center_horizontal|clip_horizontal</item>
+        <item name="android:background">@drawable/mme_bg_app_btn_rounded_white</item>
+        <item name="android:layout_height">@dimen/_42ssp</item>
+        <item name="android:layout_marginLeft">@dimen/_12sdp</item>
+        <item name="android:layout_marginRight">@dimen/_12sdp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay">
+    </style>
+
+    <style name="ButtonRoundedRed">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">left|center_horizontal|clip_horizontal</item>
+        <item name="android:background">@drawable/mme_bg_app_btn_rounded_red</item>
+        <item name="android:layout_height">@dimen/_42ssp</item>
+        <item name="android:layout_marginLeft">@dimen/_12sdp</item>
+        <item name="android:layout_marginRight">@dimen/_12sdp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+    <style name="checkBoxStyle">
+        <item name="android:textColorSecondary">@color/main_theme</item>
+        <item name="colorAccent">@color/main_theme</item>
+    </style>
+
+    <style name="edittext">
+        <item name="android:textSize">@dimen/_15ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">#90E49292</item>
+        <item name="android:gravity">clip_horizontal</item>
+        <item name="android:background">@drawable/mme_bg_edittext</item>
+        <item name="android:layout_height">@dimen/_42ssp</item>
+        <item name="android:layout_marginLeft">@dimen/_12sdp</item>
+        <item name="android:layout_marginRight">@dimen/_12sdp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
+
+    <style name="ButtonRoundedWhite">
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textColor">@color/main_theme</item>
+        <item name="android:gravity">left|center_horizontal|clip_horizontal</item>
+        <item name="android:background">@drawable/mme_bg_app_btn_rounded_white</item>
+        <item name="android:layout_height">@dimen/_42ssp</item>
+        <item name="android:layout_marginLeft">@dimen/_12sdp</item>
+        <item name="android:layout_marginRight">@dimen/_12sdp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+</resources>
