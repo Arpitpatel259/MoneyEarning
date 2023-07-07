@@ -63,6 +63,7 @@ public class SpinWheel extends AppCompatActivity {
     TextView tvHundredSpinLeft;
     TextView tvTwentySpinLeft;
     TextView tvWithdrawMoney;
+
     public void onBackPressed() {
         finish();
     }
@@ -111,6 +112,18 @@ public class SpinWheel extends AppCompatActivity {
         ll20App.setOnClickListener(v -> {
             if (SpinCounter20 == 0) {
                 startActivity(new Intent(SpinWheel.this, SlotAdd.class));
+               /* dialog.setContentView(R.layout.activity_slot_add);
+                dialog.getWindow().setLayout(-2, -2);
+                dialog.setCancelable(false);
+
+                LinearLayout b = dialog.findViewById(R.id.tv20Payment);
+                b.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                    }
+                });
+                dialog.show();*/
             }
             ll50App.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.mme_bg_app_unselected, null));
             is50Select = false;
@@ -273,10 +286,10 @@ public class SpinWheel extends AppCompatActivity {
         String ts = Long.toString(tsLong);
 
         map.put("Email_id", preferences.getString("email", ""));
-        map.put("amount", preferences.getString(Constants.KEY_MONEY, ""));
+        map.put("Win_Amount", preferences.getString(Constants.KEY_MONEY, ""));
         map.put("TimeStamp", ts);
 
-        database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Transaction").child(ts).setValue(map);
+        database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Win_Amount").child(ts).setValue(map);
 
         tvWithdrawMoney.setText("₹ " + preferences.getString(Constants.KEY_MONEY, Constants.KEY_MONEY));
         if (is20Select) {
