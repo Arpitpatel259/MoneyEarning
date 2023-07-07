@@ -45,8 +45,6 @@ public class checkout extends AppCompatActivity {
             Toast.makeText(checkout.this, "Button Clicked", Toast.LENGTH_SHORT).show();
             requestPayment();
         });
-
-
     }
 
     //isReadytoPay()

@@ -38,6 +38,9 @@ import org.json.JSONObject;
  */
 public class PaymentsUtil {
 
+    //53052  20
+    //13152  50
+
     public static final BigDecimal CENTS_IN_A_UNIT = new BigDecimal(100);
 
     /**
@@ -249,7 +252,7 @@ public class PaymentsUtil {
             paymentDataRequest.put(
                     "allowedPaymentMethods", new JSONArray().put(PaymentsUtil.getCardPaymentMethod()));
             paymentDataRequest.put("transactionInfo", PaymentsUtil.getTransactionInfo(price));
-            paymentDataRequest.put("merchantInfo", PaymentsUtil.getMerchantInfo());
+            paymentDataRequest.put("merchantInfo", PaymentsUtil.getCardPaymentMethod());
 
       /* An optional shipping address requirement is a top-level property of the PaymentDataRequest
       JSON object. */
