@@ -8,12 +8,28 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:987861361430:android:10df9df736d0fb04d26637",
+        "mobilesdk_app_id": "1:987861361430:android:f4bf996dc8dd57b8d26637",
         "android_client_info": {
-          "package_name": "com.example.earn_money"
+          "package_name": "com.kc.earn_money"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "987861361430-676gebaplrg05tht74jo3c68n25ns3kh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kc.earn_money",
+            "certificate_hash": "8d147ab5cdbd7592882efb18ad6433f550142b40"
+          }
+        },
+        {
+          "client_id": "987861361430-jlgelce9pte8u270kue16urmsv6u6kr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kc.earn_money",
+            "certificate_hash": "892e89e1cc2248167d1a0913aad2925679f0b831"
+          }
+        },
         {
           "client_id": "987861361430-8i7nqpr4lth3gu45h3tamgrcgb0p2lol.apps.googleusercontent.com",
           "client_type": 3

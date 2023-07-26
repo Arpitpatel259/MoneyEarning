@@ -75,25 +75,6 @@
             android:layout_marginBottom="@dimen/_5sdp">
 
             <TextView
-                android:id="@+id/tvCancela"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_38sdp"
-                android:layout_weight="1"
-                android:background="@drawable/mme_bg_app_btn_rounded_gray"
-                android:fontFamily="@font/medium"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:onClick="CancleData"
-                android:text="@string/cancel"
-                android:textColor="#000000"
-                android:textSize="@dimen/_13ssp"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <View
-                android:layout_width="@dimen/_10sdp"
-                android:layout_height="match_parent" />
-
-            <TextView
                 android:id="@+id/tvWin"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_38sdp"

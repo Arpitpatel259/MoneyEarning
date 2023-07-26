@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".Withdraw">
+    tools:context="com.kc.earn_money.Withdraw">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,9 +17,9 @@
             android:layout_width="@dimen/_45sdp"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:importantForAccessibility="no"
             android:padding="@dimen/_14sdp"
-            android:src="@drawable/mme_back_arrow"
-            android:importantForAccessibility="no" />
+            android:src="@drawable/mme_back_arrow" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,9 +62,9 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/dimen_14sp"
                 android:layout_marginRight="@dimen/dimen_14sp"
+                android:baselineAligned="false"
                 android:gravity="center"
-                android:padding="@dimen/_11ssp"
-                android:baselineAligned="false">
+                android:padding="@dimen/_11ssp">
 
                 <LinearLayout
                     android:id="@+id/llPhonePe"
@@ -80,9 +80,9 @@
                         android:layout_height="@dimen/dimen_50dp"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:importantForAccessibility="no"
                         android:padding="@dimen/dimen_10dp"
-                        android:src="@drawable/mme_icon_phonepe"
-                        android:importantForAccessibility="no" />
+                        android:src="@drawable/mme_icon_phonepe" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -114,9 +114,9 @@
                         android:layout_height="@dimen/dimen_50dp"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:importantForAccessibility="no"
                         android:padding="@dimen/dimen_10dp"
-                        android:src="@drawable/mme_icon_googlepay"
-                        android:importantForAccessibility="no" />
+                        android:src="@drawable/mme_icon_googlepay" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -146,9 +146,9 @@
                         android:layout_height="@dimen/dimen_50dp"
                         android:layout_gravity="center"
                         android:gravity="center"
+                        android:importantForAccessibility="no"
                         android:padding="@dimen/dimen_10dp"
-                        android:src="@drawable/mme_icon_paytm"
-                        android:importantForAccessibility="no" />
+                        android:src="@drawable/mme_icon_paytm" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -187,11 +187,11 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:focusable="false"
                 android:hint="@string/enter_amount"
+                android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLines="1"
                 android:padding="@dimen/dimen_15dp"
                 android:textColorHint="#D32F2F"
-                android:importantForAutofill="no"
                 tools:ignore="VisualLintTextFieldSize" />
 
             <androidx.appcompat.widget.AppCompatButton

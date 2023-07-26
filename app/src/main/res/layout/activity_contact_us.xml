@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".Contact_Us">
+    tools:context="com.kc.earn_money.Contact_Us">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.earn_money'
+    namespace 'com.kc.earn_money'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.earn_money"
+        applicationId "com.kc.earn_money"
         minSdk 29
         targetSdk 33
         versionCode 1
@@ -35,12 +35,14 @@ android {
 
 dependencies {
 
+    implementation fileTree(dir: "libs",include: ["*.jar"])
     implementation('androidx.appcompat:appcompat:1.6.1')
     implementation('androidx.appcompat:appcompat-resources:1.6.1')
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.firebase:firebase-auth-ktx:22.0.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.1.0'
     implementation 'com.google.android.gms:play-services-wallet:19.2.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -66,4 +68,12 @@ dependencies {
 
     //for Images
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation  'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
 }

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context=".DashBoard">
+    tools:context="com.kc.earn_money.DashBoard">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,6 +21,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/AppBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/background"
@@ -54,12 +55,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_below="@+id/AppBar"
                 android:gravity="center">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvReview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lav_welcome_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:padding="5sp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/animation_lk6vxjjw" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -112,6 +121,7 @@
 
     </LinearLayout>
 
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -120,177 +130,238 @@
         android:fitsSystemWindows="true"
         tools:ignore="VisualLintBounds">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:orientation="vertical">
+            android:layout_weight="0.6"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:background="@color/main_theme"
-                android:gravity="bottom"
-                android:orientation="vertical"
-                android:padding="@dimen/_12sdp">
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/ivProfile"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:paddingTop="@dimen/dimen_15dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/mme_icon_user_icon"
-                    app:civ_border_color="@color/white"
-                    app:civ_border_width="@dimen/_1sdp" />
-
-                <TextView
-                    android:id="@+id/tvUserName"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:fontFamily="@font/semibold"
-                    android:includeFontPadding="false"
-                    android:text="@string/app_name"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_20ssp" />
+                    android:layout_height="180dp"
+                    android:background="@color/main_theme"
+                    android:gravity="bottom"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_12sdp">
 
-                <TextView
-                    android:id="@+id/tvUserEmail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_1sdp"
-                    android:fontFamily="@font/regular"
-                    android:includeFontPadding="false"
-                    android:text="@string/nav_mail"
-                    android:textColor="@color/text_gray"
-                    android:textSize="@dimen/_12ssp" />
-            </LinearLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:paddingTop="@dimen/dimen_15dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mme_icon_user_icon"
+                        app:civ_border_color="@color/white"
+                        app:civ_border_width="@dimen/_1sdp" />
 
-            <LinearLayout
-                android:id="@+id/llWallet"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                tools:ignore="UseCompoundDrawables">
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="@font/semibold"
+                        android:includeFontPadding="false"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_20ssp" />
 
-                <ImageView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:importantForAccessibility="no"
-                    android:padding="@dimen/_14sdp"
-                    android:src="@drawable/mme_home_nav_wallet"
-                    app:tint="@color/main_theme" />
+                    <TextView
+                        android:id="@+id/tvUserEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_1sdp"
+                        android:fontFamily="@font/regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/nav_mail"
+                        android:textColor="@color/text_gray"
+                        android:textSize="@dimen/_12ssp" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/llWallet"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/medium"
-                    android:gravity="center_vertical"
-                    android:includeFontPadding="false"
-                    android:text="@string/wallet"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_17ssp" />
-            </LinearLayout>
+                    android:layout_height="@dimen/_45sdp"
+                    tools:ignore="UseCompoundDrawables">
 
-            <LinearLayout
-                android:id="@+id/llContact"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no"
+                        android:padding="@dimen/_14sdp"
+                        android:src="@drawable/mme_home_nav_wallet"
+                        app:tint="@color/main_theme" />
 
-                <ImageView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:importantForAccessibility="no"
-                    android:padding="@dimen/_14sdp"
-                    android:src="@drawable/mme_home_nav_contact"
-                    app:tint="@color/main_theme" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="@string/wallet"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17ssp" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/llContact"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/medium"
-                    android:gravity="center_vertical"
-                    android:includeFontPadding="false"
-                    android:text="@string/contact_us"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_17ssp" />
-            </LinearLayout>
+                    android:layout_height="@dimen/_45sdp"
+                    tools:ignore="UseCompoundDrawables">
 
-            <LinearLayout
-                android:id="@+id/llPrivacy"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no"
+                        android:padding="@dimen/_14sdp"
+                        android:src="@drawable/mme_home_nav_contact"
+                        app:tint="@color/main_theme" />
 
-                <ImageView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:importantForAccessibility="no"
-                    android:padding="@dimen/_13sdp"
-                    android:src="@drawable/mme_home_nav_privacy"
-                    app:tint="@color/main_theme" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="@string/contact_us"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17ssp" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/llTransaction"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/medium"
-                    android:gravity="center_vertical"
-                    android:includeFontPadding="false"
-                    android:text="@string/privacy_policy"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_17ssp" />
-            </LinearLayout>
+                    android:layout_height="@dimen/_45sdp"
+                    tools:ignore="UseCompoundDrawables">
 
-            <LinearLayout
-                android:id="@+id/Terms"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no"
+                        android:padding="@dimen/_14sdp"
+                        android:src="@drawable/mme_ic_withdra"
+                        app:tint="@color/main_theme" />
 
-                <ImageView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:importantForAccessibility="no"
-                    android:padding="@dimen/_14sdp"
-                    android:src="@drawable/mme_home_nav_terms"
-                    app:tint="@color/main_theme" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="Withdraw Request"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17ssp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/llBank"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/medium"
-                    android:gravity="center_vertical"
-                    android:includeFontPadding="false"
-                    android:text="@string/terms_amp_condition"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_17ssp" />
-            </LinearLayout>
+                    android:layout_height="@dimen/_45sdp"
+                    tools:ignore="UseCompoundDrawables">
 
-            <LinearLayout
-                android:id="@+id/logout"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no"
+                        android:padding="@dimen/_14sdp"
+                        android:src="@drawable/mme_ic_withdra"
+                        app:tint="@color/main_theme" />
 
-                <ImageView
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="match_parent"
-                    android:importantForAccessibility="no"
-                    android:padding="@dimen/_14sdp"
-                    android:src="@drawable/ic_logout"
-                    app:tint="@color/main_theme" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="Bank Transaction"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17ssp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/llPrivacy"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/medium"
-                    android:gravity="center_vertical"
-                    android:includeFontPadding="false"
-                    android:text="@string/log_out"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_17ssp" />
+                    android:layout_height="@dimen/_45sdp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no"
+                        android:padding="@dimen/_13sdp"
+                        android:src="@drawable/mme_home_nav_privacy"
+                        app:tint="@color/main_theme" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="@string/privacy_policy"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17ssp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Terms"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:visibility="gone"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no"
+                        android:padding="@dimen/_14sdp"
+                        android:src="@drawable/mme_home_nav_terms"
+                        app:tint="@color/main_theme" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="@string/terms_amp_condition"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17ssp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:importantForAccessibility="no"
+                        android:padding="@dimen/_14sdp"
+                        android:src="@drawable/ic_logout"
+                        app:tint="@color/main_theme" />
+
+                    <TextView
+                        android:id="@+id/LogoutBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:text="@string/log_out"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17ssp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </ScrollView>
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
