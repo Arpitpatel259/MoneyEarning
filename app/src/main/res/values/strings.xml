@@ -45,6 +45,8 @@
     <string name="get_spin_now">Get Spin Now</string>
     <string name="wallet">Wallet</string>
     <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up1">Don\'t Have an account? Sign Up</string>
     <string name="spin_point">Spin Point</string>
     <string name="log_out">Log Out</string>
     <string name="get_more_spin">Get More Spin</string>
@@ -54,4 +56,7 @@
     <string name="amount_will_be_added_to_your_winings">Amount will be added to your winings.</string>
     <string name="cancel">Cancel</string>
     <string name="collect_amount">Collect Amount</string>
+    <string name="password">Enter Your Password</string>
+    <string name="email">Enter Your Email</string>
+    <string name="welcome">Welcome</string>
 </resources>

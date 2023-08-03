@@ -43,7 +43,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SpinWheel extends AppCompatActivity {
-    int lastSpinValueIndex1 = 0, lastSpinValueIndex2 = 0, lastSpinValueIndex3 = 0, lastSpinValueIndex4 = 0;
+    int lastSpinValueIndex1, lastSpinValueIndex2, lastSpinValueIndex3, lastSpinValueIndex4;
     int randomSectorIndex1 = 0, randomSectorIndex2 = 0, randomSectorIndex3 = 0, randomSectorIndex4 = 0;
     private static final int[] sectors = {1, 2, 3, 4, 5, 0};
     private static final int[] sectors50 = {1, 2, 3, 4, 5, 0};
@@ -94,6 +94,11 @@ public class SpinWheel extends AppCompatActivity {
         SpinCounter50 = Integer.parseInt(preferences.getString(Constants.KEY_SPIN_50, "0"));
         SpinCounter100 = Integer.parseInt(preferences.getString(Constants.KEY_SPIN_100, "0"));
         SpinCounter500 = Integer.parseInt(preferences.getString(Constants.KEY_SPIN_500, "0"));
+
+        lastSpinValueIndex1 = Integer.parseInt(preferences.getString(Constants.KEY_SPIN_LAST_20, "0"));
+        lastSpinValueIndex2 = Integer.parseInt(preferences.getString(Constants.KEY_SPIN_LAST_50, "0"));
+        lastSpinValueIndex3 = Integer.parseInt(preferences.getString(Constants.KEY_SPIN_LAST_100, "0"));
+        lastSpinValueIndex4 = Integer.parseInt(preferences.getString(Constants.KEY_SPIN_LAST_500, "0"));
 
         getDgreeForSector();
         getDgreeForSector50();
@@ -459,6 +464,9 @@ public class SpinWheel extends AppCompatActivity {
 
                 int winValue = sectors[sectors.length - (randomSectorIndex1 + 1)];
                 lastSpinValueIndex1 = lastSpinValueIndex1 + 1;
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(Constants.KEY_SPIN_LAST_20, String.valueOf(lastSpinValueIndex1));
+                editor.apply();
                 if (winValue == 0) {
                     dialog.setContentView(R.layout.lose_value);
                     mediaPlayer.stop();
@@ -508,6 +516,9 @@ public class SpinWheel extends AppCompatActivity {
 
                 int winValue = sectors50[Constants.Spin_set_50.get(lastSpinValueIndex2)];
                 lastSpinValueIndex2 = (lastSpinValueIndex2 + 1) % Constants.Spin_set_50.size();
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(Constants.KEY_SPIN_LAST_50, String.valueOf(lastSpinValueIndex2));
+                editor.apply();
                 if (winValue == 0) {
                     dialog.setContentView(R.layout.lose_value);
                     mediaPlayer.stop();
@@ -556,6 +567,9 @@ public class SpinWheel extends AppCompatActivity {
 
                 int winValue = sectors100[Constants.Spin_set_100.get(lastSpinValueIndex3)];
                 lastSpinValueIndex3 = (lastSpinValueIndex3 + 1) % Constants.Spin_set_100.size();
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(Constants.KEY_SPIN_LAST_100, String.valueOf(lastSpinValueIndex3));
+                editor.apply();
                 if (winValue == 0) {
                     dialog.setContentView(R.layout.lose_value);
                     mediaPlayer.stop();
@@ -605,8 +619,9 @@ public class SpinWheel extends AppCompatActivity {
 
                 int winValue = sectors500[Constants.Spin_set_500.get(lastSpinValueIndex4)];
                 lastSpinValueIndex4 = (lastSpinValueIndex4 + 1) % Constants.Spin_set_500.size();
-                System.out.println(lastSpinValueIndex4);
-                Log.d("TAG", "onAnimationEnd: " + ((lastSpinValueIndex4 + 1) % Constants.Spin_set_500.size()));
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(Constants.KEY_SPIN_LAST_20, String.valueOf(lastSpinValueIndex4));
+                editor.apply();
                 if (winValue == 0) {
                     dialog.setContentView(R.layout.lose_value);
                     mediaPlayer.stop();
@@ -671,7 +686,7 @@ public class SpinWheel extends AppCompatActivity {
             context.getPackageManager().getApplicationInfo(SpinWheel.GOOGLE_PAY_PACKAGE_NAME, 0);
             return true;
         } catch (PackageManager.NameNotFoundException e) {
-            Log.d("Google", "isAppInstalled: " + e.toString());
+            Log.d("Google", "isAppInstalled: " + e);
             return false;
         }
     }

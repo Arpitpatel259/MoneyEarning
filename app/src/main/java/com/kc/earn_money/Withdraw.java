@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,9 +16,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-import com.kc.earn_money.R;
-import com.kc.earn_money.Utils.Constants;
-import com.kc.earn_money.helper.coreHelper;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +24,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.kc.earn_money.Utils.Constants;
+import com.kc.earn_money.helper.coreHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -88,11 +88,17 @@ public class Withdraw extends AppCompatActivity {
 
         WithDraw = findViewById(R.id.btnWithDraw);
         WithDraw.setOnClickListener(v -> {
+
+            String upiId = UpiID.getText().toString();
             FirebaseDatabase.getInstance().getReference().child("WithDrawal").child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.child("RequestMoney").getValue(boolean.class) != null && dataSnapshot.child("RequestMoney").getValue(boolean.class)) {
                         Toast.makeText(Withdraw.this, "Your Request Is Already Created Wait For Transaction.", Toast.LENGTH_SHORT).show();
+                    }
+                    if (TextUtils.isEmpty(upiId)) {
+                        UpiID.setError("UPI ID cannot be empty");
+                        UpiID.requestFocus();
                     } else {
                         long tsLong = System.currentTimeMillis() / 1000;
                         String ts = Long.toString(tsLong);

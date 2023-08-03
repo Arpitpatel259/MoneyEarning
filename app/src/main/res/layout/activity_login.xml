@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".Register">
+    tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_centerInParent="true"
             android:fontFamily="@font/semibold"
             android:gravity="center"
-            android:text="@string/sign_up"
+            android:text="@string/sign_in"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             android:textStyle="bold" />
@@ -74,30 +74,13 @@
                     android:fontFamily="@font/semibold"
                     android:gravity="center"
                     android:includeFontPadding="false"
-                    android:text="@string/welcome"
+                    android:text="@string/welcome_back"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_18ssp"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/etRegName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:autofillHints=""
-                    android:background="@drawable/setting_button"
-                    android:drawableStart="@drawable/ic_username"
-                    android:drawablePadding="20dp"
-                    android:ems="10"
-                    android:hint="@string/enter_name"
-                    android:inputType="textEmailAddress"
-                    android:padding="@dimen/_11sdp"
-                    android:textColor="@color/black"
-                    android:textColorHint="#100F0F"
-                    tools:ignore="VisualLintTextFieldSize" />
-
-                <EditText
-                    android:id="@+id/etRegEmail"
+                    android:id="@+id/etLoginEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -107,14 +90,14 @@
                     android:drawablePadding="20dp"
                     android:ems="10"
                     android:hint="@string/email"
-                    android:inputType="textEmailAddress"
-                    android:padding="@dimen/_11sdp"
                     android:textColor="@color/black"
                     android:textColorHint="#100F0F"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/_11sdp"
                     tools:ignore="VisualLintTextFieldSize" />
 
                 <EditText
-                    android:id="@+id/etRegPass"
+                    android:id="@+id/etLoginPass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -124,20 +107,69 @@
                     android:drawablePadding="20dp"
                     android:hint="@string/password"
                     android:inputType="textPassword"
-                    android:maxLength="10"
-                    android:padding="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="#100F0F"
+                    android:maxLength="10"
+                    android:padding="10dp"
                     tools:ignore="VisualLintTextFieldSize" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnRegister"
+                <Button
+                    android:id="@+id/login_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button"
+                    android:text="@string/sign_in"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/new_Account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/sign_up1"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/llGoogle"
+                    style="@style/ButtonRoundWhite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:padding="@dimen/_11sdp"
-                    android:text="Register"
-                    tools:ignore="HardcodedText,VisualLintButtonSize" />
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="TODO"
+                        android:padding="3dp"
+                        android:src="@drawable/mme_icon_google"
+                        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/login_with_google"
+                        android:textColor="#00838F"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvPrivacy"

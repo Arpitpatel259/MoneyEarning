@@ -30,8 +30,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Login"
+            android:exported="true" />
+        <activity
             android:name=".Maintainance"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Money_Request"
             android:exported="true" />

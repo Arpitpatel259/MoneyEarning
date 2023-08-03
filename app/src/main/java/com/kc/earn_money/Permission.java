@@ -9,8 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.kc.earn_money.R;
-
 public class Permission extends AppCompatActivity {
 
     TextView btnAgree;
@@ -27,7 +25,7 @@ public class Permission extends AppCompatActivity {
 
         btnAgree.setOnClickListener(v -> {
             if (checkBox.isChecked()) {
-                startActivity(new Intent(Permission.this, Register.class));
+                startActivity(new Intent(Permission.this, Login.class));
                 finish();
             } else {
                 Toast.makeText(this, "Agree The Privacy Policy in check box in", Toast.LENGTH_SHORT).show();

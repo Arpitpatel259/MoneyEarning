@@ -2,6 +2,7 @@ package com.kc.earn_money;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -9,7 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-import com.kc.earn_money.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,7 +20,6 @@ import java.util.Map;
 public class Contact_Us extends AppCompatActivity {
     ImageView ivBack;
     EditText name, email, msg;
-    String Cname, Cemail, Cmsg;
     FirebaseDatabase database;
     FirebaseAuth auth;
     FirebaseUser user;
@@ -49,22 +48,25 @@ public class Contact_Us extends AppCompatActivity {
 
         btnSend.setOnClickListener(v -> {
 
+            String Cname = name.getText().toString();
+            String Cemail = email.getText().toString();
+            String Cmsg = msg.getText().toString();
+
             if (name.getText().toString().isEmpty() && email.getText().toString().isEmpty() && msg.getText().toString().isEmpty()) {
                 Toast.makeText(Contact_Us.this, "Please Fill Up The Above Details", Toast.LENGTH_SHORT).show();
             }
-            if (name.getText().toString().isEmpty()) {
+            if (TextUtils.isEmpty(Cname)) {
                 name.setError("Please Enter Name");
+                name.requestFocus();
             }
-            if (email.getText().toString().isEmpty()) {
+            if (TextUtils.isEmpty(Cemail)) {
                 email.setError("Please Enter Email");
+                email.requestFocus();
             }
-            if (msg.getText().toString().isEmpty()) {
+            if (TextUtils.isEmpty(Cmsg)) {
                 msg.setError("Please Type Your Content");
+                msg.requestFocus();
             } else {
-                Cname = name.getText().toString();
-                Cemail = email.getText().toString();
-                Cmsg = msg.getText().toString();
-
                 long tsLong = System.currentTimeMillis() / 1000;
                 String ts = Long.toString(tsLong);
 

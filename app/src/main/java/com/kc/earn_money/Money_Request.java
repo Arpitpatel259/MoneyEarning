@@ -152,7 +152,6 @@ public class Money_Request extends AppCompatActivity {
                 uri = getUpiPaymentUri(RequestData.get(position).getSenderName(), RequestData.get(position).getSenderUpiId(), RequestData.get(position).getReqAmount(), RequestData.get(position).getTransactionId());
                 payWithGPay();
             });
-
         }
 
         class WorkViewHolder extends RecyclerView.ViewHolder {

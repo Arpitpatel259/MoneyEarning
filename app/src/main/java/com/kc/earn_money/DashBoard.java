@@ -53,6 +53,8 @@ public class DashBoard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
+        preferences = getSharedPreferences(Constants.MyPREFERENCES, 0);
+
         getLocation = findViewById(R.id.btnGetLoaction);
         Privacy_Text = findViewById(R.id.btnGetPrivacyPolicy);
         Rate_Text = findViewById(R.id.btnRateUs);
@@ -70,7 +72,6 @@ public class DashBoard extends AppCompatActivity {
         tvUserProfile = findViewById(R.id.ivProfile);
         tvUserName = findViewById(R.id.tvUserName);
 
-        preferences = getSharedPreferences(Constants.MyPREFERENCES, 0);
         auth = FirebaseAuth.getInstance();
 
         GoogleSignInOptions build = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build();
@@ -154,9 +155,15 @@ public class DashBoard extends AppCompatActivity {
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this, gso);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if (account != null) {
+
+        if (preferences.getString(Constants.LoginData, "").contains("LoginWithEmailPassword")) {
+            String Uname = "Welcome User";
+            String Umail = preferences.getString(Constants.Email, "");
+            tvUserName.setText(Uname);
+            tvUserEmail.setText(Umail);
+        } else if (account != null) {
             String Uname = account.getDisplayName();
-            String Umail = account.getEmail();
+            String Umail = preferences.getString(Constants.Email, "");
             Picasso.with(getApplicationContext()).load(Objects.requireNonNull(account.getPhotoUrl()).toString()).into(tvUserProfile);
             tvUserName.setText(Uname);
             tvUserEmail.setText(Umail);
