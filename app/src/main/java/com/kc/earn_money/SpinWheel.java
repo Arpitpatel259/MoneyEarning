@@ -138,7 +138,7 @@ public class SpinWheel extends AppCompatActivity {
 
                 LinearLayout b = dialog.findViewById(R.id.tv20Payment);
                 b.setOnClickListener(v1 -> {
-                    String P_Amount20 = /*String.valueOf(100 - (Discount * 100))*/"1";
+                    String P_Amount20 = String.valueOf(100 - (Discount * 100));
                     // uri = getUpiPaymentUri(P_Name, P_Upi_ID, P_MSG, P_Amount20);
                     //payWithGPay();
                     initiateUpiPayment(P_Name, P_Upi_ID, P_MSG, P_Amount20);
@@ -703,6 +703,25 @@ public class SpinWheel extends AppCompatActivity {
         }
     }
 
+    /* Paytm Payment Integration*/
+    public void initiateUpiPayment(String name, String upiId, String transactionNote, String amount) {
+        String currencyCode = "INR";
+
+        // Create a UPI URI
+        String upiUri = "upi://pay?pa=" + upiId + "&pn=" + name + "&tn=" + transactionNote + "&am=" + amount + "&cu=" + currencyCode;
+
+        // Create an Intent
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(upiUri));
+
+        // Check if an app to handle the Intent is available
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(intent, 0);
+        } else {
+            Toast.makeText(this, "No UPI app found", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (data != null) {
@@ -809,25 +828,6 @@ public class SpinWheel extends AppCompatActivity {
             finish();
         }
     }
-
-    public void initiateUpiPayment(String name, String upiId, String transactionNote, String amount) {
-        String currencyCode = "INR";
-
-        // Create a UPI URI
-        String upiUri = "upi://pay?pa=" + upiId + "&pn=" + name + "&tn=" + transactionNote + "&am=" + amount + "&cu=" + currencyCode;
-
-        // Create an Intent
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(upiUri));
-
-        // Check if an app to handle the Intent is available
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(intent, 0);
-        } else {
-            Toast.makeText(this, "No UPI app found", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 
     public void getPaymentDataSpin() {
         FirebaseUser user = auth.getCurrentUser();
