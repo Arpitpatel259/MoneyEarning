@@ -33,7 +33,8 @@
             android:text="Privacy Policy"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
     </RelativeLayout>
 
     <WebView

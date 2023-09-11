@@ -34,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                topAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slide_down);
+                bottomAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bottom_up);
+                final TextView text1 = findViewById(R.id.app_title);
+                final TextView text2 = findViewById(R.id.app_desc);
+                text1.setAnimation(topAnimation);
+                text2.setAnimation(bottomAnimation);
+
                 if (dataSnapshot.child("Merchantid").getValue(String.class) != null) {
                     Constants.MERCHANT_ID = dataSnapshot.child("Merchantid").getValue(String.class);
                 }
@@ -41,12 +49,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, Maintainance.class));
                     finish();
                 } else {
-                    topAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.slide_down);
-                    bottomAnimation = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bottom_up);
-                    final TextView text1 = findViewById(R.id.app_title);
-                    final TextView text2 = findViewById(R.id.app_desc);
-                    text1.setAnimation(topAnimation);
-                    text2.setAnimation(bottomAnimation);
                     new Handler().postDelayed(() -> {
                         Intent mainIntent = new Intent(MainActivity.this, DashBoard.class);
                         startActivity(mainIntent);

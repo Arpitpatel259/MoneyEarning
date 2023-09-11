@@ -131,7 +131,7 @@
                         android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="9sp"
-                        tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+                        tools:ignore="HardcodedText,RtlHardcoded,SmallSp,TextContrastCheck" />
                 </LinearLayout>
 
                 <LinearLayout

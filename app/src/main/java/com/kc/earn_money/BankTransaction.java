@@ -16,14 +16,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.kc.earn_money.Model.PayAmountRecordModel;
-import com.kc.earn_money.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.kc.earn_money.Model.PayAmountRecordModel;
 
 import java.util.ArrayList;
 
@@ -60,11 +59,8 @@ public class BankTransaction extends AppCompatActivity {
         });
 
         imgViewBack8 = findViewById(R.id.backButton);
-        imgViewBack8.setOnClickListener(v -> {
-            onBackPressed();
-            startActivity(new Intent(BankTransaction.this, DashBoard.class));
-            finish();
-        });
+        imgViewBack8.setOnClickListener(v -> onBackPressed());
+
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
@@ -119,7 +115,7 @@ public class BankTransaction extends AppCompatActivity {
             return new WorkAdapter.WorkViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.bank_transaction, parent, false));
         }
 
-        @SuppressLint("SetTextI18n")
+        @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
         @Override
         public void onBindViewHolder(@NonNull WorkAdapter.WorkViewHolder holder, int position) {
             holder.PayerName.setText(BankList.get(position).getPayerName());

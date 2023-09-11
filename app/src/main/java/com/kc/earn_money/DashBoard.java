@@ -3,6 +3,7 @@ package com.kc.earn_money;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -121,7 +122,12 @@ public class DashBoard extends AppCompatActivity {
 
         Privacy_Text.setOnClickListener(v -> startActivity(new Intent(DashBoard.this, Privacy_Policy.class)));
 
-        Rate_Text.setOnClickListener(v -> Toast.makeText(DashBoard.this, "Rate Us Button Pressed", Toast.LENGTH_SHORT).show());
+        Rate_Text.setOnClickListener(v -> {
+            String url = "https://play.google.com/store/apps/details?id=com.kc.earn_money";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+        });
 
         Wallet.setOnClickListener(v -> {
             Intent i = new Intent(DashBoard.this, Withdraw.class);

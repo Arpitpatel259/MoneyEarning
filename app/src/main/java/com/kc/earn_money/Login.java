@@ -1,5 +1,6 @@
 package com.kc.earn_money;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +41,7 @@ import java.util.Map;
 public class Login extends AppCompatActivity {
 
     EditText etLoginEmail, etLoginPassword;
+    ImageView signinBack;
     ProgressDialog progressDialog;
     Button btnLogin;
     FirebaseAuth mAuth;
@@ -50,6 +53,7 @@ public class Login extends AppCompatActivity {
     GoogleSignInClient gsc;
     GoogleSignInOptions gso;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +65,16 @@ public class Login extends AppCompatActivity {
         gsc = GoogleSignIn.getClient(this, gso);
 
         new_Account = findViewById(R.id.new_Account);
-        new_Account.setOnClickListener(v -> startActivity(new Intent(Login.this, Register.class)));
+        new_Account.setOnClickListener(v -> {
+            startActivity(new Intent(Login.this, Register.class));
+            finish();
+        });
+
+        signinBack = findViewById(R.id.signinBack);
+        signinBack.setOnClickListener(v -> {
+            startActivity(new Intent(Login.this, Permission.class));
+            finish();
+        });
 
         auth = FirebaseAuth.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -220,7 +233,7 @@ public class Login extends AppCompatActivity {
                     }
                 });
 
-                startActivity(new Intent(Login.this, DashBoard.class));
+                //startActivity(new Intent(Login.this, DashBoard.class));
                 finish();
             } else {
                 Toast.makeText(Login.this, "Error Detected", Toast.LENGTH_SHORT).show();

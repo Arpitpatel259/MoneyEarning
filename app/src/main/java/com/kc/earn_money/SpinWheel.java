@@ -79,10 +79,6 @@ public class SpinWheel extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     Uri uri;
 
-    public void onBackPressed() {
-        finish();
-    }
-
     @SuppressLint({"SetTextI18n", "MissingInflatedId"})
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,20 +124,24 @@ public class SpinWheel extends AppCompatActivity {
         tvFiveHundredSpinLeft.setText(preferences.getString(Constants.KEY_SPIN_500, Constants.KEY_MONEY) + " Spin Left");
 
         llWithdrawMoney = findViewById(R.id.llWithdrawMoney);
-        llWithdrawMoney.setOnClickListener(v -> startActivity(new Intent(SpinWheel.this, Withdraw.class)));
+        llWithdrawMoney.setOnClickListener(v -> {
+            startActivity(new Intent(SpinWheel.this, Withdraw.class));
+            finish();
+        });
 
         ll20App = findViewById(R.id.ll20App);
         ll20App.setOnClickListener(v -> {
             if (SpinCounter20 == 0) {
                 dialog.setContentView(R.layout.activity_slot_add);
                 dialog.getWindow().setLayout(-2, -2);
-                dialog.setCancelable(false);
+                dialog.setCancelable(true);
 
                 LinearLayout b = dialog.findViewById(R.id.tv20Payment);
                 b.setOnClickListener(v1 -> {
-                    String P_Amount20 = String.valueOf(100 - (Discount * 100));
-                    uri = getUpiPaymentUri(P_Name, P_Upi_ID, P_MSG, P_Amount20);
-                    payWithGPay();
+                    String P_Amount20 = /*String.valueOf(100 - (Discount * 100))*/"1";
+                    // uri = getUpiPaymentUri(P_Name, P_Upi_ID, P_MSG, P_Amount20);
+                    //payWithGPay();
+                    initiateUpiPayment(P_Name, P_Upi_ID, P_MSG, P_Amount20);
                     GlobalValue = 20;
                 });
 
@@ -163,7 +163,7 @@ public class SpinWheel extends AppCompatActivity {
             if (SpinCounter50 == 0) {
                 dialog.setContentView(R.layout.activity_slot_add);
                 dialog.getWindow().setLayout(-2, -2);
-                dialog.setCancelable(false);
+                dialog.setCancelable(true);
 
                 LinearLayout b = dialog.findViewById(R.id.tv50Payment);
                 b.setOnClickListener(v13 -> {
@@ -190,7 +190,7 @@ public class SpinWheel extends AppCompatActivity {
             if (SpinCounter100 == 0) {
                 dialog.setContentView(R.layout.activity_slot_add);
                 dialog.getWindow().setLayout(-2, -2);
-                dialog.setCancelable(false);
+                dialog.setCancelable(true);
 
                 LinearLayout b = dialog.findViewById(R.id.tv100Payment);
                 b.setOnClickListener(v14 -> {
@@ -217,7 +217,7 @@ public class SpinWheel extends AppCompatActivity {
             if (SpinCounter500 == 0) {
                 dialog.setContentView(R.layout.activity_slot_add);
                 dialog.getWindow().setLayout(-2, -2);
-                dialog.setCancelable(false);
+                dialog.setCancelable(true);
 
                 LinearLayout b = dialog.findViewById(R.id.tv500Payment);
                 b.setOnClickListener(v12 -> {
@@ -241,10 +241,7 @@ public class SpinWheel extends AppCompatActivity {
         });
 
         imgViewBack4 = findViewById(R.id.imgViewBack4);
-        imgViewBack4.setOnClickListener(v -> {
-            startActivity(new Intent(SpinWheel.this, DashBoard.class));
-            finish();
-        });
+        imgViewBack4.setOnClickListener(v -> finish());
 
         btnPlayNow = findViewById(R.id.btnPlayNow);
         btnPlayNow.setOnClickListener(v -> {
@@ -479,7 +476,7 @@ public class SpinWheel extends AppCompatActivity {
                 } else {
                     mediaPlayer.stop();
                     SaveEarning(CashValue, winValue);
-                    dialog.setContentView(R.layout.win_lose);
+                    dialog.setContentView(R.layout.win_value);
                     TextView tvAmountWinning = dialog.findViewById(R.id.tvAmountWinning);
                     tvAmountWinning.setText("RS. " + (winValue * CashValue));
 
@@ -530,7 +527,7 @@ public class SpinWheel extends AppCompatActivity {
                 } else {
                     mediaPlayer.stop();
                     SaveEarning(CashValue, winValue);
-                    dialog.setContentView(R.layout.win_lose);
+                    dialog.setContentView(R.layout.win_value);
                     TextView tvAmountWinning = dialog.findViewById(R.id.tvAmountWinning);
                     tvAmountWinning.setText("RS. " + (winValue * CashValue));
 
@@ -581,7 +578,7 @@ public class SpinWheel extends AppCompatActivity {
                 } else {
                     mediaPlayer.stop();
                     SaveEarning(CashValue, winValue);
-                    dialog.setContentView(R.layout.win_lose);
+                    dialog.setContentView(R.layout.win_value);
                     TextView tvAmountWinning = dialog.findViewById(R.id.tvAmountWinning);
                     tvAmountWinning.setText("RS. " + (winValue * CashValue));
 
@@ -634,7 +631,7 @@ public class SpinWheel extends AppCompatActivity {
                 } else {
                     mediaPlayer.stop();
                     SaveEarning(CashValue, winValue);
-                    dialog.setContentView(R.layout.win_lose);
+                    dialog.setContentView(R.layout.win_value);
                     TextView tvAmountWinning = dialog.findViewById(R.id.tvAmountWinning);
                     tvAmountWinning.setText("RS. " + (winValue * CashValue));
 
@@ -714,92 +711,123 @@ public class SpinWheel extends AppCompatActivity {
         Map<String, String> map = new HashMap<>();
         long tsLong = System.currentTimeMillis() / 1000;
         String ts = Long.toString(tsLong);
-        if ((RESULT_OK == resultCode) && status.equals("success")) {
 
-            if (GlobalValue == 20) {
-                map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map.put("amount", String.valueOf(100 - (Discount * 100)));
+        if (resultCode == 0) {
+            if (resultCode == RESULT_OK || resultCode == 11 && status.equals("success")) {
+                // Payment successful
+                if (GlobalValue == 20) {
+                    map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
+                    map.put("amount", String.valueOf(100 - (Discount * 100)));
 
-                Map<String, Object> updateMap = new HashMap<>();
-                updateMap.put("20_Spin_Left", "5");
-                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
-            } else if (GlobalValue == 50) {
-                map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map.put("amount", String.valueOf(250 - (Discount * 250)));
+                    Map<String, Object> updateMap = new HashMap<>();
+                    updateMap.put("20_Spin_Left", "5");
+                    database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
+                } else if (GlobalValue == 50) {
+                    map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
+                    map.put("amount", String.valueOf(250 - (Discount * 250)));
 
-                Map<String, Object> updateMap = new HashMap<>();
-                updateMap.put("50_Spin_Left", "5");
-                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
-            } else if (GlobalValue == 100) {
-                map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map.put("amount", String.valueOf(500 - (Discount * 500)));
+                    Map<String, Object> updateMap = new HashMap<>();
+                    updateMap.put("50_Spin_Left", "5");
+                    database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
+                } else if (GlobalValue == 100) {
+                    map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
+                    map.put("amount", String.valueOf(500 - (Discount * 500)));
 
-                Map<String, Object> updateMap = new HashMap<>();
-                updateMap.put("100_Spin_Left", "5");
-                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
-            } else if (GlobalValue == 500) {
-                map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map.put("amount", String.valueOf(2500 - (Discount * 2500)));
+                    Map<String, Object> updateMap = new HashMap<>();
+                    updateMap.put("100_Spin_Left", "5");
+                    database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
+                } else if (GlobalValue == 500) {
+                    map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
+                    map.put("amount", String.valueOf(2500 - (Discount * 2500)));
 
-                Map<String, Object> updateMap = new HashMap<>();
-                updateMap.put("500_Spin_Left", "5");
-                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
+                    Map<String, Object> updateMap = new HashMap<>();
+                    updateMap.put("500_Spin_Left", "5");
+                    database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
+                }
+
+                Transaction_id = coreHelper.generateTransactionId();
+                GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+                map.put("Sender_Name", account.getDisplayName());
+                map.put("Sender_Email", account.getEmail());
+                map.put("Receiver_Name", "Earn Money App");
+                map.put("Receiver_Upi_Id", P_Upi_ID);
+                map.put("Transaction_Status", status);
+                map.put("Transaction_Id", Transaction_id);
+                map.put("TimeStamp", ts);
+
+                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map);
+                getPaymentDataSpin();
+                Toast.makeText(this, "Transaction Sucessful", Toast.LENGTH_SHORT).show();
+            } else {
+                Map<String, String> map1 = new HashMap<>();
+
+                String Transaction_id_Failed = coreHelper.generateTransactionId();
+                GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+                map1.put("Receiver_Name", "Earn Money App");
+                map1.put("Receiver_Upi_Id", P_Upi_ID);
+                map1.put("Sender_Email", account.getEmail());
+                map1.put("Sender_Name", account.getDisplayName());
+                map1.put("Transaction_Status", "failed");
+                map1.put("Transaction_Id", Transaction_id_Failed);
+                map1.put("TimeStamp", ts);
+
+                if (GlobalValue == 20) {
+                    map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
+                    map1.put("amount", String.valueOf(100 - (Discount * 100)));
+
+                    database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
+                } else if (GlobalValue == 50) {
+                    map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
+                    map1.put("amount", String.valueOf(250 - (Discount * 250)));
+
+                    database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
+                } else if (GlobalValue == 100) {
+                    map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
+                    map1.put("amount", String.valueOf(500 - (Discount * 500)));
+
+                    database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
+                } else if (GlobalValue == 500) {
+                    map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
+                    map1.put("amount", String.valueOf(2500 - (Discount * 2500)));
+
+                    database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
+                }
+
+                getPaymentDataSpin();
+                Toast.makeText(this, "Transaction Failed", Toast.LENGTH_SHORT).show();
+                finish();
             }
-
-            Transaction_id = coreHelper.generateTransactionId();
-            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-
-            map.put("Sender_Name", account.getDisplayName());
-            map.put("Sender_Email", account.getEmail());
-            map.put("Receiver_Name", "Earn Money App");
-            map.put("Receiver_Upi_Id", P_Upi_ID);
-            map.put("Transaction_Status", status);
-            map.put("Transaction_Id", Transaction_id);
-            map.put("TimeStamp", ts);
-
-            database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map);
-            getPaymentDataSpin();
-            Toast.makeText(this, "Transaction Sucessful", Toast.LENGTH_SHORT).show();
+        } else if (resultCode == RESULT_CANCELED) {
+            // Payment was canceled by user
+            Toast.makeText(this, "Payment canceled", Toast.LENGTH_SHORT).show();
+            finish();
         } else {
-            Map<String, String> map1 = new HashMap<>();
-
-            String Transaction_id_Failed = coreHelper.generateTransactionId();
-            GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-
-            map1.put("Receiver_Name", "Earn Money App");
-            map1.put("Receiver_Upi_Id", P_Upi_ID);
-            map1.put("Sender_Email", account.getEmail());
-            map1.put("Sender_Name", account.getDisplayName());
-            map1.put("Transaction_Status", "failed");
-            map1.put("Transaction_Id", Transaction_id_Failed);
-            map1.put("TimeStamp", ts);
-
-            if (GlobalValue == 20) {
-                map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map1.put("amount", String.valueOf(100 - (Discount * 100)));
-
-                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
-            } else if (GlobalValue == 50) {
-                map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map1.put("amount", String.valueOf(250 - (Discount * 250)));
-
-                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
-            } else if (GlobalValue == 100) {
-                map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map1.put("amount", String.valueOf(500 - (Discount * 500)));
-
-                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
-            } else if (GlobalValue == 500) {
-                map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map1.put("amount", String.valueOf(2500 - (Discount * 2500)));
-
-                database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
-            }
-
-            getPaymentDataSpin();
-            Toast.makeText(this, "Transaction Failed", Toast.LENGTH_SHORT).show();
+            // Payment failed or unknown response
+            Toast.makeText(this, "Payment failed", Toast.LENGTH_SHORT).show();
+            finish();
         }
     }
+
+    public void initiateUpiPayment(String name, String upiId, String transactionNote, String amount) {
+        String currencyCode = "INR";
+
+        // Create a UPI URI
+        String upiUri = "upi://pay?pa=" + upiId + "&pn=" + name + "&tn=" + transactionNote + "&am=" + amount + "&cu=" + currencyCode;
+
+        // Create an Intent
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(upiUri));
+
+        // Check if an app to handle the Intent is available
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(intent, 0);
+        } else {
+            Toast.makeText(this, "No UPI app found", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     public void getPaymentDataSpin() {
         FirebaseUser user = auth.getCurrentUser();

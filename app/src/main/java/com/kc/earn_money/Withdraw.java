@@ -80,7 +80,7 @@ public class Withdraw extends AppCompatActivity {
 
         ivBack = findViewById(R.id.imgViewBack);
         ivBack.setOnClickListener(v -> {
-            startActivity(new Intent(Withdraw.this, DashBoard.class));
+            //startActivity(new Intent(Withdraw.this, DashBoard.class));
             finish();
         });
 

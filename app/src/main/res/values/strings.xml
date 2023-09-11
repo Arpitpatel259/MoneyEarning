@@ -59,4 +59,6 @@
     <string name="password">Enter Your Password</string>
     <string name="email">Enter Your Email</string>
     <string name="welcome">Welcome</string>
+    <string name="Maintenance">We are working to improve your experience. Please check back later.</string>
+    <string name="no_request_found">No Request Found</string>
 </resources>

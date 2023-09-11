@@ -36,7 +36,10 @@ public class Register extends AppCompatActivity {
         preferences = getSharedPreferences(Constants.MyPREFERENCES, Context.MODE_PRIVATE);
 
         imageView = findViewById(R.id.imgViewBack3);
-        imageView.setOnClickListener(v -> finish());
+        imageView.setOnClickListener(v -> {
+            startActivity(new Intent(Register.this, Login.class));
+            finish();
+        });
 
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();

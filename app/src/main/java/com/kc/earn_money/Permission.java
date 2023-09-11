@@ -33,10 +33,7 @@ public class Permission extends AppCompatActivity {
         });
 
         ivBack = findViewById(R.id.imgViewBack2);
-        ivBack.setOnClickListener(v -> {
-            startActivity(new Intent(Permission.this, DashBoard.class));
-            finish();
-        });
+        ivBack.setOnClickListener(v -> finish());
 
     }
 }

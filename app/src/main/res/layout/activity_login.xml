@@ -14,7 +14,7 @@
         android:background="@color/background">
 
         <ImageView
-            android:id="@+id/imgViewBack3"
+            android:id="@+id/signinBack"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="match_parent"
             android:gravity="center"

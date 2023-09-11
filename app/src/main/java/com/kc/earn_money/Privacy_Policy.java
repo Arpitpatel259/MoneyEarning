@@ -1,17 +1,13 @@
 package com.kc.earn_money;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.kc.earn_money.R;
 
 public class Privacy_Policy extends AppCompatActivity {
 
@@ -31,12 +27,9 @@ public class Privacy_Policy extends AppCompatActivity {
 
         pvBack = findViewById(R.id.pvBack);
 
-        pvBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-                startActivity(new Intent(Privacy_Policy.this, DashBoard.class));
-            }
+        pvBack.setOnClickListener(v -> {
+            onBackPressed();
+            finish();
         });
     }
 }

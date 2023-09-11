@@ -39,7 +39,7 @@ public class Contact_Us extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         ImageView imageView = findViewById(R.id.imgViewBack1);
         this.ivBack = imageView;
-        imageView.setOnClickListener(v -> Contact_Us.this.startActivity(new Intent(Contact_Us.this, DashBoard.class)));
+        imageView.setOnClickListener(v -> finish());
 
         name = findViewById(R.id.etName);
         email = findViewById(R.id.etEmail);

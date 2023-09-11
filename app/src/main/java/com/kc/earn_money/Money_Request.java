@@ -36,7 +36,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Money_Request extends AppCompatActivity {
-
     ImageView backBack;
     TextView noData;
     RecyclerView Withdrawal;
