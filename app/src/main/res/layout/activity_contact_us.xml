@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.kc.earn_money.Contact_Us">
+    tools:context="com.kc.earn_money.Contact_Us_Page">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -133,10 +133,11 @@
                     android:autoLink="email"
                     android:fontFamily="@font/josefinsans_regular"
                     android:minHeight="48dp"
+                    android:padding="15sp"
                     android:text="@string/strContactUsLine1"
                     android:textColor="#0277BD"
                     android:textColorLink="#FF0000"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_14ssp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -145,9 +146,10 @@
                     android:autoLink="phone"
                     android:fontFamily="@font/regular"
                     android:includeFontPadding="false"
+                    android:padding="15sp"
                     android:text="@string/strContactUsLine2"
                     android:textColor="#0277BD"
-                    android:textSize="@dimen/_13ssp" />
+                    android:textSize="@dimen/_14ssp" />
             </LinearLayout>
 
             <TextView

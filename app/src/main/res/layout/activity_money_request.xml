@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.kc.earn_money.Money_Request">
+    tools:context="com.kc.earn_money.Withdrawal_Request_Page">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -49,8 +49,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/josefinsans_bold"
                 android:text="@string/no_request_found"
-                android:visibility="gone" />
+                android:textSize="@dimen/_20sdp"
+                android:visibility="gone"
+                tools:ignore="SpUsage" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/WithdrawalWork"

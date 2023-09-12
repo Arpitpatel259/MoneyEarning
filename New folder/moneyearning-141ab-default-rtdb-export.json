@@ -1,0 +1,1095 @@
+{
+  "Merchantid": "vyapar.168366070864@hdfcbank",
+  "Wallet_Data_Entries": {
+    "E7qzfQ7HZ2WN8LxL4aNDwXJrjg23": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "0",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Email": "hetjogani123@gmail.com",
+      "Win_Amount": {
+        "1694417726": {
+          "Email_id": "hetjogani123@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694417726",
+          "Total_Amount": "100",
+          "Win_Amount": "100"
+        },
+        "1694418503": {
+          "Email_id": "hetjogani123@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418503",
+          "Total_Amount": "200",
+          "Win_Amount": "100"
+        },
+        "1694418553": {
+          "Email_id": "hetjogani123@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418553",
+          "Total_Amount": "260",
+          "Win_Amount": "60"
+        },
+        "1694418560": {
+          "Email_id": "hetjogani123@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418560",
+          "Total_Amount": "340",
+          "Win_Amount": "80"
+        },
+        "1694418598": {
+          "Email_id": "hetjogani123@gmail.com",
+          "Spin_Left": "0",
+          "TimeStamp": "1694418598",
+          "Total_Amount": "380",
+          "Win_Amount": "40"
+        }
+      },
+      "total_amount": "380"
+    },
+    "JIMIFnSQW5UCnjPdf211k9ZytTL2": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "5",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Bank_Transaction": {
+        "Spin_Purchase": {
+          "1694420667": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694420667",
+            "Transaction_Id": "8K4O835",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694421763": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694421763",
+            "Transaction_Id": "YO9T72I",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694425165": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694425165",
+            "Transaction_Id": "3C0SCSS",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694425537": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694425537",
+            "Transaction_Id": "OAS5H55",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694425782": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694425782",
+            "Transaction_Id": "M0H2NSZ",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694426461": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694426461",
+            "Transaction_Id": "C3RT7KE",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694427474": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694427474",
+            "Transaction_Id": "8YN0WC7",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694430046": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694430046",
+            "Transaction_Id": "3V0CR2I",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694433315": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694433315",
+            "Transaction_Id": "RNACRYQ",
+            "Transaction_Status": "success",
+            "amount": "90.0"
+          },
+          "1694435764": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "arpit.vekariya123@gmail.com",
+            "Sender_Name": "VEKARIYA ARPIT",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694435764",
+            "Transaction_Id": "KAY5JXG",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          }
+        }
+      },
+      "Email": "arpit.vekariya123@gmail.com",
+      "Win_Amount": {
+        "1694410525": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694410525",
+          "Total_Amount": "100",
+          "Win_Amount": "100"
+        },
+        "1694410530": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694410530",
+          "Total_Amount": "160",
+          "Win_Amount": "60"
+        },
+        "1694410536": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694410536",
+          "Total_Amount": "240",
+          "Win_Amount": "80"
+        },
+        "1694410541": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694410541",
+          "Total_Amount": "280",
+          "Win_Amount": "40"
+        },
+        "1694410547": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "0",
+          "TimeStamp": "1694410547",
+          "Total_Amount": "300",
+          "Win_Amount": "20"
+        },
+        "1694433255": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694433255",
+          "Total_Amount": "400",
+          "Win_Amount": "100"
+        },
+        "1694433261": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694433261",
+          "Total_Amount": "460",
+          "Win_Amount": "60"
+        },
+        "1694433266": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694433266",
+          "Total_Amount": "540",
+          "Win_Amount": "80"
+        },
+        "1694433271": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694433271",
+          "Total_Amount": "580",
+          "Win_Amount": "40"
+        },
+        "1694433276": {
+          "Email_id": "arpit.vekariya123@gmail.com",
+          "Spin_Left": "0",
+          "TimeStamp": "1694433276",
+          "Total_Amount": "600",
+          "Win_Amount": "20"
+        }
+      },
+      "total_amount": "600"
+    },
+    "KlnHzTTs5ZRrpFSUJ5446Kwt4z52": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "0",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Bank_Transaction": {
+        "Spin_Purchase": {
+          "1694417702": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "manalipatel5720@gmail.com",
+            "Sender_Name": "Manali Patel",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694417702",
+            "Transaction_Id": "NDDZETS",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          }
+        }
+      },
+      "Email": "manalipatel5720@gmail.com",
+      "Win_Amount": {
+        "1694417642": {
+          "Email_id": "manalipatel5720@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694417642",
+          "Total_Amount": "100",
+          "Win_Amount": "100"
+        },
+        "1694417653": {
+          "Email_id": "manalipatel5720@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694417653",
+          "Total_Amount": "160",
+          "Win_Amount": "60"
+        },
+        "1694417658": {
+          "Email_id": "manalipatel5720@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694417658",
+          "Total_Amount": "240",
+          "Win_Amount": "80"
+        },
+        "1694417667": {
+          "Email_id": "manalipatel5720@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694417667",
+          "Total_Amount": "280",
+          "Win_Amount": "40"
+        },
+        "1694417675": {
+          "Email_id": "manalipatel5720@gmail.com",
+          "Spin_Left": "0",
+          "TimeStamp": "1694417675",
+          "Total_Amount": "300",
+          "Win_Amount": "20"
+        }
+      },
+      "total_amount": "300"
+    },
+    "TtM46FqiNnNfzGP7FStCGXw7Yt63": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "0",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Bank_Transaction": {
+        "Spin_Purchase": {
+          "1694418465": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "vmandanka672@rku.ac.in",
+            "Sender_Name": "VANSH MANDANKA",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694418465",
+            "Transaction_Id": "TWSE23H",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694419768": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "vmandanka672@rku.ac.in",
+            "Sender_Name": "VANSH MANDANKA",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694419768",
+            "Transaction_Id": "6MTOPOW",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694419784": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "vmandanka672@rku.ac.in",
+            "Sender_Name": "VANSH MANDANKA",
+            "Spin_Purchase": "5 Spin Of 500",
+            "TimeStamp": "1694419784",
+            "Transaction_Id": "T8Y8EIS",
+            "Transaction_Status": "failed",
+            "amount": "2250.0"
+          },
+          "1694419829": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "vmandanka672@rku.ac.in",
+            "Sender_Name": "VANSH MANDANKA",
+            "Spin_Purchase": "5 Spin Of 100",
+            "TimeStamp": "1694419829",
+            "Transaction_Id": "P3AC0HE",
+            "Transaction_Status": "failed",
+            "amount": "450.0"
+          },
+          "1694419845": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "vmandanka672@rku.ac.in",
+            "Sender_Name": "VANSH MANDANKA",
+            "Spin_Purchase": "5 Spin Of 500",
+            "TimeStamp": "1694419845",
+            "Transaction_Id": "1C606ZB",
+            "Transaction_Status": "failed",
+            "amount": "2250.0"
+          },
+          "1694419903": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "vmandanka672@rku.ac.in",
+            "Sender_Name": "VANSH MANDANKA",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694419903",
+            "Transaction_Id": "720J66S",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          }
+        }
+      },
+      "Email": "vmandanka672@rku.ac.in",
+      "Win_Amount": {
+        "1694418426": {
+          "Email_id": "vmandanka672@rku.ac.in",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418426",
+          "Total_Amount": "100",
+          "Win_Amount": "100"
+        },
+        "1694418432": {
+          "Email_id": "vmandanka672@rku.ac.in",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418432",
+          "Total_Amount": "160",
+          "Win_Amount": "60"
+        },
+        "1694418437": {
+          "Email_id": "vmandanka672@rku.ac.in",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418437",
+          "Total_Amount": "240",
+          "Win_Amount": "80"
+        },
+        "1694418443": {
+          "Email_id": "vmandanka672@rku.ac.in",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418443",
+          "Total_Amount": "280",
+          "Win_Amount": "40"
+        },
+        "1694418449": {
+          "Email_id": "vmandanka672@rku.ac.in",
+          "Spin_Left": "0",
+          "TimeStamp": "1694418449",
+          "Total_Amount": "300",
+          "Win_Amount": "20"
+        }
+      },
+      "total_amount": "300"
+    },
+    "ZkdprfkZJCYWmodshYUtB9PhJMX2": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "0",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Bank_Transaction": {
+        "Spin_Purchase": {
+          "1694419672": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694419672",
+            "Transaction_Id": "ZYUI8AV",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694419678": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694419678",
+            "Transaction_Id": "W7604WI",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694419684": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694419684",
+            "Transaction_Id": "TO7MBEL",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694419693": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694419693",
+            "Transaction_Id": "O11FD4M",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694419700": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694419700",
+            "Transaction_Id": "6OZKM15",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694419734": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694419734",
+            "Transaction_Id": "3YETA13",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694419743": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 100",
+            "TimeStamp": "1694419743",
+            "Transaction_Id": "KCV00HB",
+            "Transaction_Status": "failed",
+            "amount": "450.0"
+          },
+          "1694419792": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694419792",
+            "Transaction_Id": "7E3I74G",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694419875": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694419875",
+            "Transaction_Id": "0SE38DN",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694419931": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694419931",
+            "Transaction_Id": "BPW52E3",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694419944": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694419944",
+            "Transaction_Id": "GOPL28G",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694419950": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 100",
+            "TimeStamp": "1694419950",
+            "Transaction_Id": "0TSNWKW",
+            "Transaction_Status": "failed",
+            "amount": "450.0"
+          },
+          "1694419958": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 500",
+            "TimeStamp": "1694419958",
+            "Transaction_Id": "3J30ZWD",
+            "Transaction_Status": "failed",
+            "amount": "2250.0"
+          },
+          "1694420029": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 500",
+            "TimeStamp": "1694420029",
+            "Transaction_Id": "MA9WQL2",
+            "Transaction_Status": "failed",
+            "amount": "2250.0"
+          },
+          "1694421706": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694421706",
+            "Transaction_Id": "GOCSOQN",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694421759": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694421759",
+            "Transaction_Id": "WD82FQF",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694422073": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694422073",
+            "Transaction_Id": "3WC9JKP",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694422081": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694422081",
+            "Transaction_Id": "T93JI0V",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694422162": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694422162",
+            "Transaction_Id": "E80PMJD",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694429992": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694429992",
+            "Transaction_Id": "W7B1Q7P",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694430003": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694430003",
+            "Transaction_Id": "UHJXCD1",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694430042": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694430042",
+            "Transaction_Id": "C0HE34S",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694430052": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694430052",
+            "Transaction_Id": "HQ6NNIU",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694430485": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694430485",
+            "Transaction_Id": "Y5MX3KZ",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694430517": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694430517",
+            "Transaction_Id": "E49QWM1",
+            "Transaction_Status": "failed",
+            "amount": "187.5"
+          },
+          "1694430764": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694430764",
+            "Transaction_Id": "T5XF7X9",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694430845": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694430845",
+            "Transaction_Id": "B9RJLEX",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694431347": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694431347",
+            "Transaction_Id": "PNGJIX1",
+            "Transaction_Status": "failed",
+            "amount": "187.0"
+          },
+          "1694431507": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694431507",
+            "Transaction_Id": "PRN63ZB",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          },
+          "1694433233": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694433233",
+            "Transaction_Id": "26CF8XM",
+            "Transaction_Status": "success",
+            "amount": "90.0"
+          },
+          "1694433250": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070864@hdfcbank",
+            "Sender_Email": "krunalmandanka3@gmail.com",
+            "Sender_Name": "Krunal Mandanka",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694433250",
+            "Transaction_Id": "7R86OFW",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          }
+        }
+      },
+      "Email": "krunalmandanka3@gmail.com",
+      "Win_Amount": {
+        "1694419315": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694419315",
+          "Total_Amount": "100",
+          "Win_Amount": "100"
+        },
+        "1694419323": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694419323",
+          "Total_Amount": "160",
+          "Win_Amount": "60"
+        },
+        "1694419328": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694419328",
+          "Total_Amount": "240",
+          "Win_Amount": "80"
+        },
+        "1694419335": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694419335",
+          "Total_Amount": "280",
+          "Win_Amount": "40"
+        },
+        "1694419342": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "0",
+          "TimeStamp": "1694419342",
+          "Total_Amount": "300",
+          "Win_Amount": "20"
+        },
+        "1694433259": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694433259",
+          "Total_Amount": "400",
+          "Win_Amount": "100"
+        },
+        "1694433281": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694433281",
+          "Total_Amount": "460",
+          "Win_Amount": "60"
+        },
+        "1694433289": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694433289",
+          "Total_Amount": "540",
+          "Win_Amount": "80"
+        },
+        "1694433308": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694433308",
+          "Total_Amount": "580",
+          "Win_Amount": "40"
+        },
+        "1694433334": {
+          "Email_id": "krunalmandanka3@gmail.com",
+          "Spin_Left": "0",
+          "TimeStamp": "1694433334",
+          "Total_Amount": "600",
+          "Win_Amount": "20"
+        }
+      },
+      "total_amount": "600"
+    },
+    "a0tOWIVeKZVTFm28t9qzHZWcmvw1": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "1",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Bank_Transaction": {
+        "Spin_Purchase": {
+          "1694420603": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "kenildadhi@gmail.com",
+            "Sender_Name": "Kenil Dadhi",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694420603",
+            "Transaction_Id": "T6XO5MQ",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694420765": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "kenildadhi@gmail.com",
+            "Sender_Name": "Kenil Dadhi",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694420765",
+            "Transaction_Id": "0KK42LZ",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694421625": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "kenildadhi@gmail.com",
+            "Sender_Name": "Kenil Dadhi",
+            "Spin_Purchase": "5 Spin Of 50",
+            "TimeStamp": "1694421625",
+            "Transaction_Id": "901W0FI",
+            "Transaction_Status": "failed",
+            "amount": "225.0"
+          },
+          "1694421706": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "kenildadhi@gmail.com",
+            "Sender_Name": "Kenil Dadhi",
+            "Spin_Purchase": "5 Spin Of 500",
+            "TimeStamp": "1694421706",
+            "Transaction_Id": "6HPAXGB",
+            "Transaction_Status": "failed",
+            "amount": "2250.0"
+          },
+          "1694421756": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "kenildadhi@gmail.com",
+            "Sender_Name": "Kenil Dadhi",
+            "Spin_Purchase": "5 Spin Of 500",
+            "TimeStamp": "1694421756",
+            "Transaction_Id": "48VSVEQ",
+            "Transaction_Status": "failed",
+            "amount": "2250.0"
+          }
+        }
+      },
+      "Email": "kenildadhi@gmail.com",
+      "Win_Amount": {
+        "1694420156": {
+          "Email_id": "kenildadhi@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694420156",
+          "Total_Amount": "100",
+          "Win_Amount": "100"
+        },
+        "1694420163": {
+          "Email_id": "kenildadhi@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694420163",
+          "Total_Amount": "160",
+          "Win_Amount": "60"
+        },
+        "1694420174": {
+          "Email_id": "kenildadhi@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694420174",
+          "Total_Amount": "240",
+          "Win_Amount": "80"
+        },
+        "1694420180": {
+          "Email_id": "kenildadhi@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694420180",
+          "Total_Amount": "280",
+          "Win_Amount": "40"
+        }
+      },
+      "total_amount": "280"
+    },
+    "dXy6j0lPxmT5mwWij0FqzXMzTQx2": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "0",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Bank_Transaction": {
+        "Spin_Purchase": {
+          "1694418298": {
+            "Receiver_Name": "Earn Money App",
+            "Receiver_Upi_Id": "vyapar.168366070686@hdfcbank",
+            "Sender_Email": "kailashtadhani@gmail.com",
+            "Sender_Name": "Kailas Tadhani",
+            "Spin_Purchase": "5 Spin Of 20",
+            "TimeStamp": "1694418298",
+            "Transaction_Id": "6R5ZU2M",
+            "Transaction_Status": "failed",
+            "amount": "90.0"
+          }
+        }
+      },
+      "Email": "kailashtadhani@gmail.com",
+      "Win_Amount": {
+        "1694418264": {
+          "Email_id": "kailashtadhani@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418264",
+          "Total_Amount": "100",
+          "Win_Amount": "100"
+        },
+        "1694418275": {
+          "Email_id": "kailashtadhani@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418275",
+          "Total_Amount": "160",
+          "Win_Amount": "60"
+        },
+        "1694418280": {
+          "Email_id": "kailashtadhani@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418280",
+          "Total_Amount": "240",
+          "Win_Amount": "80"
+        },
+        "1694418287": {
+          "Email_id": "kailashtadhani@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1694418287",
+          "Total_Amount": "280",
+          "Win_Amount": "40"
+        },
+        "1694418293": {
+          "Email_id": "kailashtadhani@gmail.com",
+          "Spin_Left": "0",
+          "TimeStamp": "1694418293",
+          "Total_Amount": "300",
+          "Win_Amount": "20"
+        }
+      },
+      "total_amount": "300"
+    },
+    "p6UM1KwWZnZPBzZ4A9DyUUooIWl2": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "5",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Email": "example@gmail.com",
+      "total_amount": "0"
+    },
+    "yo5rcBz0S4YS82Q5h2hulCrjKTI3": {
+      "100_Spin_Left": "0",
+      "20_Spin_Left": "0",
+      "500_Spin_Left": "0",
+      "50_Spin_Left": "0",
+      "Email": "earnmoneyuser@gmail.com",
+      "Win_Amount": {
+        "1692171073": {
+          "Email_id": "earnmoneyuser@gmail.com",
+          "Spin_Left": "4",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1692171073",
+          "Total_Amount": "100",
+          "Win_Amount": "100"
+        },
+        "1692171117": {
+          "Email_id": "earnmoneyuser@gmail.com",
+          "Spin_Left": "3",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1692171117",
+          "Total_Amount": "160",
+          "Win_Amount": "60"
+        },
+        "1692171135": {
+          "Email_id": "earnmoneyuser@gmail.com",
+          "Spin_Left": "2",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1692171135",
+          "Total_Amount": "240",
+          "Win_Amount": "80"
+        },
+        "1692171170": {
+          "Email_id": "earnmoneyuser@gmail.com",
+          "Spin_Left": "1",
+          "Spin_Left_20": "20_Spin",
+          "TimeStamp": "1692171170",
+          "Total_Amount": "280",
+          "Win_Amount": "40"
+        },
+        "1692589144": {
+          "Email_id": "earnmoneyuser@gmail.com",
+          "Spin_Left": "0",
+          "TimeStamp": "1692589144",
+          "Total_Amount": "380",
+          "Win_Amount": "100"
+        }
+      },
+      "total_amount": "380"
+    }
+  },
+  "isAppUnderMaintainance": false
+}

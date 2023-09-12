@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context="com.kc.earn_money.DashBoard">
+    tools:context="com.kc.earn_money.DashBoard_Main_Page">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -306,32 +306,6 @@
                         android:gravity="center_vertical"
                         android:includeFontPadding="false"
                         android:text="@string/privacy_policy"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_17ssp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/Terms"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_45sdp"
-                    android:visibility="gone"
-                    tools:ignore="UseCompoundDrawables">
-
-                    <ImageView
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="match_parent"
-                        android:importantForAccessibility="no"
-                        android:padding="@dimen/_14sdp"
-                        android:src="@drawable/mme_home_nav_terms"
-                        app:tint="@color/main_theme" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/medium"
-                        android:gravity="center_vertical"
-                        android:includeFontPadding="false"
-                        android:text="@string/terms_amp_condition"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_17ssp" />
                 </LinearLayout>

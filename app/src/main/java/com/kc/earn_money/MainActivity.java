@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
                     Constants.MERCHANT_ID = dataSnapshot.child("Merchantid").getValue(String.class);
                 }
                 if (dataSnapshot.child("isAppUnderMaintainance").getValue(boolean.class)) {
-                    startActivity(new Intent(MainActivity.this, Maintainance.class));
+                    startActivity(new Intent(MainActivity.this, Maintainance_Page.class));
                     finish();
                 } else {
                     new Handler().postDelayed(() -> {
-                        Intent mainIntent = new Intent(MainActivity.this, DashBoard.class);
+                        Intent mainIntent = new Intent(MainActivity.this, DashBoard_Main_Page.class);
                         startActivity(mainIntent);
                         finish();
                     }, 1200);

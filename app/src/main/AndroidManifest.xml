@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_EMAIL" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="ReservedSystemPermission" />
-
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <queries>
         <intent>
@@ -30,37 +30,37 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Login"
+            android:name=".Login_Activity_Page"
             android:exported="true" />
         <activity
-            android:name=".Maintainance"
+            android:name=".Maintainance_Page"
             android:exported="true" />
         <activity
-            android:name=".Money_Request"
+            android:name=".Withdrawal_Request_Page"
             android:exported="true" />
         <activity
-            android:name=".Privacy_Policy"
+            android:name=".Privacy_Policy_Page"
             android:exported="true" />
         <activity
-            android:name=".BankTransaction"
+            android:name=".Bank_Tansaction_Page"
             android:exported="true" />
         <activity
-            android:name=".Register"
+            android:name=".Register_Activity_Page"
             android:exported="true" />
         <activity
-            android:name=".Contact_Us"
+            android:name=".Contact_Us_Page"
             android:exported="true" />
         <activity
-            android:name=".DashBoard"
+            android:name=".DashBoard_Main_Page"
             android:exported="true" />
         <activity
-            android:name=".Withdraw"
+            android:name=".Withdraw_Money_Page"
             android:exported="true" />
         <activity
-            android:name=".Permission"
+            android:name=".Terms_Condition_Page"
             android:exported="true" />
         <activity
-            android:name=".SpinWheel"
+            android:name=".SpinWheel_Game_Page"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

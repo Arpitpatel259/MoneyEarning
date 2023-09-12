@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    tools:context=".Login">
+    tools:context=".Login_Activity_Page">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -132,7 +132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="16dp"
                     android:text="@string/sign_up1"
                     android:textColor="@color/colorAccent"
                     android:textSize="20sp"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context="com.kc.earn_money.BankTransaction">
+    tools:context="com.kc.earn_money.Withdrawal_Request_Page">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,10 +59,21 @@
                         android:fontFamily="@font/semibold"
                         android:includeFontPadding="false"
                         android:padding="5dp"
-                        android:text="ARPIT VEKARIYA"
+                        android:text="Sender : ARPIT VEKARIYA"
                         android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/Req_ReceiverName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/semibold"
+                        android:includeFontPadding="false"
+                        android:padding="5dp"
+                        android:text="Receiver : ARPIT VEKARIYA"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -72,9 +83,9 @@
                         android:fontFamily="@font/regular"
                         android:includeFontPadding="false"
                         android:padding="5dp"
-                        android:text="From : vyapar.168366068082@hdfcbank"
                         android:textColor="@color/black"
-                        android:textSize="9sp"
+                        android:text="From : example@upi"
+                        android:textSize="12sp"
                         android:textStyle="bold"
                         tools:ignore="HardcodedText,SmallSp" />
 
@@ -85,9 +96,9 @@
                         android:fontFamily="@font/semibold"
                         android:includeFontPadding="false"
                         android:padding="5dp"
-                        android:text="To : example@upi.com"
+                        android:text="To : example@upi"
                         android:textColor="@color/black"
-                        android:textSize="14sp"
+                        android:textSize="12sp"
                         android:textStyle="bold"
                         tools:ignore="HardcodedText" />
 

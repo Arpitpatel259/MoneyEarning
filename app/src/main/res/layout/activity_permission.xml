@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context="com.kc.earn_money.Permission">
+    tools:context="com.kc.earn_money.Terms_Condition_Page">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             android:layout_centerInParent="true"
             android:fontFamily="@font/semibold"
             android:gravity="center"
-            android:text="@string/privacy_policy"
+            android:text="@string/Term"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             android:textStyle="bold" />
