@@ -129,6 +129,7 @@ public class Login_Activity_Page extends AppCompatActivity {
                                 editor.putString(Constants.KEY_SPIN_100, dataSnapshot.child("100_Spin_Left").getValue(String.class));
                                 editor.putString(Constants.KEY_SPIN_500, dataSnapshot.child("500_Spin_Left").getValue(String.class));
                                 editor.putString(Constants.KEY_MONEY, dataSnapshot.child("total_amount").getValue(String.class));
+                                editor.putString(Constants.NAME, dataSnapshot.child("Username").getValue(String.class));
                                 editor.apply();
                             } else {
                                 Map<String, String> map = new HashMap<>();
@@ -138,12 +139,14 @@ public class Login_Activity_Page extends AppCompatActivity {
                                 map.put("100_Spin_Left", "0");
                                 map.put("500_Spin_Left", "0");
                                 map.put("total_amount", "0");
+                                map.put("Username", preferences.getString("username", ""));
                                 database.getReference().child("Wallet_Data_Entries").child(user.getUid()).setValue(map);
                                 editor.putString(Constants.KEY_SPIN_20, "5");
                                 editor.putString(Constants.KEY_SPIN_50, "0");
                                 editor.putString(Constants.KEY_SPIN_100, "0");
                                 editor.putString(Constants.KEY_SPIN_500, "0");
                                 editor.putString(Constants.KEY_MONEY, "0");
+                                editor.putString(Constants.NAME, preferences.getString("username", ""));
                                 editor.apply();
 
                             }
@@ -158,17 +161,16 @@ public class Login_Activity_Page extends AppCompatActivity {
                     editor.putString(Constants.Email, etLoginEmail.getText().toString());
                     editor.apply();
 
-                    onBackPressed();
                     Toast.makeText(Login_Activity_Page.this, "User logged in successfully", Toast.LENGTH_SHORT).show();
-                    progressDialog.dismiss();
                     Intent intent = new Intent(Login_Activity_Page.this, DashBoard_Main_Page.class);
                     startActivity(intent);
-                    finish();
+                    finishAffinity();
                 } else {
                     Toast.makeText(Login_Activity_Page.this, "Log in Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     Log.d("TAG", "loginUser: " + task.getException().getMessage());
                 }
             });
+            progressDialog.dismiss();
         }
     }
 
@@ -221,6 +223,7 @@ public class Login_Activity_Page extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.child("Email").getValue(String.class) != null) {
+
                             editor.putString(Constants.KEY_SPIN_20, dataSnapshot.child("20_Spin_Left").getValue(String.class));
                             editor.putString(Constants.KEY_SPIN_50, dataSnapshot.child("50_Spin_Left").getValue(String.class));
                             editor.putString(Constants.KEY_SPIN_100, dataSnapshot.child("100_Spin_Left").getValue(String.class));
@@ -228,6 +231,7 @@ public class Login_Activity_Page extends AppCompatActivity {
                             editor.putString(Constants.KEY_MONEY, dataSnapshot.child("total_amount").getValue(String.class));
                             editor.apply();
 
+                            finish();
                             Toast.makeText(Login_Activity_Page.this, "Your Data Updated Successfully.", Toast.LENGTH_SHORT).show();
                         } else {
                             Map<String, String> map = new HashMap<>();
@@ -244,6 +248,9 @@ public class Login_Activity_Page extends AppCompatActivity {
                             editor.putString(Constants.KEY_SPIN_500, "0");
                             editor.putString(Constants.KEY_MONEY, "0");
                             editor.apply();
+
+                            finish();
+                            Toast.makeText(Login_Activity_Page.this, "You're Login Successfully.", Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -254,14 +261,13 @@ public class Login_Activity_Page extends AppCompatActivity {
                 });
 
                 progressDialog.dismiss();
-                finish();
+
                 Intent intent = new Intent(Login_Activity_Page.this, DashBoard_Main_Page.class);
                 startActivity(intent);
-                finish();
+                finishAffinity();
             } else {
-                Toast.makeText(Login_Activity_Page.this, "Error Detected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login_Activity_Page.this, "Please Try After Sometimes.", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
 }

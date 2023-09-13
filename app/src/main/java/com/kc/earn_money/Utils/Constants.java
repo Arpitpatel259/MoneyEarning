@@ -13,7 +13,7 @@ public class Constants {
     public static final ArrayList<Integer> Spin_set_100 = new ArrayList<>();
     public static final ArrayList<Integer> Spin_set_500 = new ArrayList<>();
     public static final String Email = "email";
-    public static final String NAME = "name";
+    public static final String NAME = "username";
     public static final String LoginData = "loginWith";
     public static final String KEY_MONEY = "0";
     public static String MERCHANT_ID = "";

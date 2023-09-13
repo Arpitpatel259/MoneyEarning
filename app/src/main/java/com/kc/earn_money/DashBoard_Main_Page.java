@@ -45,10 +45,6 @@ public class DashBoard_Main_Page extends AppCompatActivity {
     ImageView tvUserProfile;
     RecyclerView recyclerView;
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,7 +156,7 @@ public class DashBoard_Main_Page extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
         if (preferences.getString(Constants.LoginData, "").contains("LoginWithEmailPassword")) {
-            String Uname = "Welcome User";
+            String Uname = preferences.getString(Constants.NAME, "");
             String Umail = preferences.getString(Constants.Email, "");
             tvUserName.setText(Uname);
             tvUserEmail.setText(Umail);

@@ -770,7 +770,7 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
 
             database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map);
             getPaymentDataSpin();
-            Toast.makeText(this, "Transaction Sucessful", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Payment Purchase Sucessfull.", Toast.LENGTH_SHORT).show();
         } else {
             Map<String, String> map1 = new HashMap<>();
 
@@ -808,7 +808,8 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
             }
 
             getPaymentDataSpin();
-            Toast.makeText(this, "Transaction Failed", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "Payment Purchase Failed! \n or \n Payment Cancled By User!", Toast.LENGTH_SHORT).show();
             finish();
         }
     }

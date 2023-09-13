@@ -157,7 +157,7 @@
                         android:paddingTop="@dimen/dimen_15dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/mme_icon_user_icon"
-                        app:civ_border_color="@color/white"
+                        app:civ_border_color="@color/red"
                         app:civ_border_width="@dimen/_1sdp" />
 
                     <TextView
