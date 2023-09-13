@@ -1,11 +1,6 @@
 package com.kc.earn_money.Utils;
 
-import com.google.android.gms.wallet.WalletConstants;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
 public class Constants {
     public static final ArrayList<Integer> Spin_set_20 = new ArrayList<>();
@@ -27,34 +22,8 @@ public class Constants {
     public static final String KEY_SPIN_LAST_500 = "value500";
     public static final String KEY_USERNAME = "user";
     public static final String MyPREFERENCES = "MyPrefs";
-    /**
-     * Google Pay Utils
-     */
-    public static final int PAYMENTS_ENVIRONMENT = WalletConstants.ENVIRONMENT_PRODUCTION;
-
-    public static final List<String> SUPPORTED_NETWORKS = Arrays.asList("AMEX", "DISCOVER", "JCB", "MASTERCARD", "VISA");
-
-    public static final List<String> SUPPORTED_METHODS = Arrays.asList("PAN_ONLY", "CRYPTOGRAM_3DS");
-
-    public static final String COUNTRY_CODE = "US";
-
-    public static final String CURRENCY_CODE = "USD";
-
-    public static final List<String> SHIPPING_SUPPORTED_COUNTRIES = Arrays.asList("US", "GB");
-
-    public static final String PAYMENT_GATEWAY_TOKENIZATION_NAME = "example";
-
-    public static final HashMap<String, String> PAYMENT_GATEWAY_TOKENIZATION_PARAMETERS = new HashMap<String, String>() {{
-        put("gateway", PAYMENT_GATEWAY_TOKENIZATION_NAME);
-        put("gatewayMerchantId", "vyapar.168366070686@hdfcbank");
-        // Your processor may require additional parameters.
-    }};
-
-    public static final String DIRECT_TOKENIZATION_PUBLIC_KEY = "REPLACE_ME";
-
-
-    public static final HashMap<String, String> DIRECT_TOKENIZATION_PARAMETERS = new HashMap<String, String>() {{
-        put("protocolVersion", "ECv2");
-        put("publicKey", DIRECT_TOKENIZATION_PUBLIC_KEY);
-    }};
+    public static String Discount_20 = "";
+    public static String Discount_50 = "";
+    public static String Discount_100 = "";
+    public static String Discount_500 = "";
 }

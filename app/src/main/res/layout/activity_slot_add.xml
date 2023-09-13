@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_10sdp"
     android:background="@drawable/mme_bg_dialog"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".SpinWheel_Game_Page">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -93,7 +94,7 @@
                             android:fontFamily="@font/semibold"
                             android:gravity="center"
                             android:includeFontPadding="false"
-                            android:text="@string/_0_discount"
+                            android:text="@{Constant.Discount_20}"
                             android:textColor="#d50000"
                             android:textSize="@dimen/_9ssp" />
 
@@ -219,7 +220,7 @@
                             android:fontFamily="@font/semibold"
                             android:gravity="center"
                             android:includeFontPadding="false"
-                            android:text="@string/_0_discount"
+                            android:text="@string/_1_discount"
                             android:textColor="#d50000"
                             android:textSize="@dimen/_9ssp" />
 
@@ -302,7 +303,7 @@
                                 android:fontFamily="@font/semibold"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
-                                android:text="RS.225"
+                                android:text="RS.187"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/_10ssp"
                                 tools:ignore="HardcodedText" />
@@ -355,7 +356,7 @@
                             android:fontFamily="@font/semibold"
                             android:gravity="center"
                             android:includeFontPadding="false"
-                            android:text="@string/_0_discount"
+                            android:text="@string/_2_discount"
                             android:textColor="#d50000"
                             android:textSize="@dimen/_9ssp" />
 
@@ -439,7 +440,7 @@
                                 android:fontFamily="@font/semibold"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
-                                android:text="₹ 450"
+                                android:text="₹ 250"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/_10ssp"
                                 tools:ignore="HardcodedText" />
@@ -480,7 +481,7 @@
                             android:fontFamily="@font/semibold"
                             android:gravity="center"
                             android:includeFontPadding="false"
-                            android:text="@string/_0_discount"
+                            android:text="@string/_3_discount"
                             android:textColor="#d50000"
                             android:textSize="@dimen/_9ssp" />
 
@@ -563,7 +564,7 @@
                                 android:fontFamily="@font/semibold"
                                 android:gravity="center"
                                 android:includeFontPadding="false"
-                                android:text="₹ 2250"
+                                android:text="₹ 875"
                                 android:textColor="@color/white"
                                 android:textSize="@dimen/_10ssp"
                                 tools:ignore="HardcodedText" />

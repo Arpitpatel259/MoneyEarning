@@ -45,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot.child("Merchantid").getValue(String.class) != null) {
                     Constants.MERCHANT_ID = dataSnapshot.child("Merchantid").getValue(String.class);
                 }
+                if (dataSnapshot.child("Discount_20").getValue(String.class) != null) {
+                    Constants.Discount_20 = dataSnapshot.child("Discount_20").getValue(String.class);
+                }
+                if (dataSnapshot.child("Discount_50").getValue(String.class) != null) {
+                    Constants.Discount_50 = dataSnapshot.child("Discount_50").getValue(String.class);
+                }
+                if (dataSnapshot.child("Discount_100").getValue(String.class) != null) {
+                    Constants.Discount_100 = dataSnapshot.child("Discount_100").getValue(String.class);
+                }
+                if (dataSnapshot.child("Discount_500").getValue(String.class) != null) {
+                    Constants.Discount_500 = dataSnapshot.child("Discount_500").getValue(String.class);
+                }
+
                 if (dataSnapshot.child("isAppUnderMaintainance").getValue(boolean.class)) {
                     startActivity(new Intent(MainActivity.this, Maintainance_Page.class));
                     finish();

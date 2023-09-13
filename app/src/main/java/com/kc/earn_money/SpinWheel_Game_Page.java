@@ -10,11 +10,9 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.ImageView;
@@ -61,10 +59,13 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
     private int GlobalValue = 0;
     int SpinCounter100, SpinCounter20, SpinCounter50, SpinCounter500, earningRecord, lastValue;
     public static String P_MSG = "Spin Purchase";
-    public static String P_Name = "Vimarsh Raiyani";
+    public static String P_Name;
     String status;
     public static String P_Upi_ID = Constants.MERCHANT_ID;
-    double Discount = 0.1d;
+    double Discount20 = Double.parseDouble(Constants.Discount_20);
+    double Discount50 = Double.parseDouble(Constants.Discount_50);
+    double Discount100 = Double.parseDouble(Constants.Discount_100);
+    double Discount500 = Double.parseDouble(Constants.Discount_500);
     ImageView Wheel;
     FirebaseAuth auth;
     AppCompatButton btnPlayNow;
@@ -84,6 +85,7 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_machine);
 
+        P_Name = getString(R.string.app_name);
         preferences = getSharedPreferences(Constants.MyPREFERENCES, Context.MODE_PRIVATE);  // Shared Preferences
 
         SpinCounter20 = Integer.parseInt(preferences.getString(Constants.KEY_SPIN_20, "5"));
@@ -138,7 +140,7 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
 
                 LinearLayout b = dialog.findViewById(R.id.tv20Payment);
                 b.setOnClickListener(v1 -> {
-                    String P_Amount20 = "1"/*String.valueOf(100 - (Discount * 100))*/;
+                    String P_Amount20 = String.valueOf(100 - (Discount20 / 100 * 100));
                     initiateUpiPayment(P_Name, P_Upi_ID, P_MSG, P_Amount20);
                     GlobalValue = 20;
                 });
@@ -165,7 +167,8 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
 
                 LinearLayout b = dialog.findViewById(R.id.tv50Payment);
                 b.setOnClickListener(v13 -> {
-                    String P_Amount50 = "1"/*String.valueOf(250 - (Discount * 250))*/;
+                    String P_Amount50 = String.valueOf(250 - (Discount50 / 100 * 250));
+                    long roundedResult = Math.round(Double.parseDouble(P_Amount50));
                     initiateUpiPayment(P_Name, P_Upi_ID, P_MSG, P_Amount50);
                     GlobalValue = 50;
                 });
@@ -191,7 +194,7 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
 
                 LinearLayout b = dialog.findViewById(R.id.tv100Payment);
                 b.setOnClickListener(v14 -> {
-                    String P_Amount100 = "1"/*String.valueOf(500 - (Discount * 500))*/;
+                    String P_Amount100 = String.valueOf(500 - (Discount100 / 100 * 500));
                     initiateUpiPayment(P_Name, P_Upi_ID, P_MSG, P_Amount100);
                     GlobalValue = 100;
                 });
@@ -217,7 +220,7 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
 
                 LinearLayout b = dialog.findViewById(R.id.tv500Payment);
                 b.setOnClickListener(v12 -> {
-                    String P_Amount500 = "1"/*String.valueOf(2500 - (Discount * 2500))*/;
+                    String P_Amount500 = String.valueOf(2500 - (Discount500 / 100 * 2500));
                     initiateUpiPayment(P_Name, P_Upi_ID, P_MSG, P_Amount500);
                     GlobalValue = 500;
                 });
@@ -669,9 +672,7 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
         notificationManager.createNotificationChannel(channel);
     }
 
-    /**
-     * Google Pay
-     */
+    /*
     private static boolean isAppInstalled(Context context) {
         try {
             context.getPackageManager().getApplicationInfo(SpinWheel_Game_Page.GOOGLE_PAY_PACKAGE_NAME, 0);
@@ -695,7 +696,7 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
         } else {
             Toast.makeText(SpinWheel_Game_Page.this, "Please Install Google Pay", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
     /* Paytm And Google Pay Payment Integration*/
     public void initiateUpiPayment(String name, String upiId, String transactionNote, String amount) {
@@ -729,28 +730,28 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
             // Payment successful
             if (GlobalValue == 20) {
                 map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map.put("amount", String.valueOf(100 - (Discount * 100)));
+                map.put("amount", String.valueOf(100 - (Discount20 / 100 * 100)));
 
                 Map<String, Object> updateMap = new HashMap<>();
                 updateMap.put("20_Spin_Left", "5");
                 database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
             } else if (GlobalValue == 50) {
                 map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map.put("amount", String.valueOf(250 - (Discount * 250)));
+                map.put("amount", String.valueOf(250 - (Discount50 / 100 * 250)));
 
                 Map<String, Object> updateMap = new HashMap<>();
                 updateMap.put("50_Spin_Left", "5");
                 database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
             } else if (GlobalValue == 100) {
                 map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map.put("amount", String.valueOf(500 - (Discount * 500)));
+                map.put("amount", String.valueOf(500 - (Discount100 / 100 * 500)));
 
                 Map<String, Object> updateMap = new HashMap<>();
                 updateMap.put("100_Spin_Left", "5");
                 database.getReference().child("Wallet_Data_Entries").child(user.getUid()).updateChildren(updateMap);
             } else if (GlobalValue == 500) {
                 map.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map.put("amount", String.valueOf(2500 - (Discount * 2500)));
+                map.put("amount", String.valueOf(2500 - (Discount500 / 100 * 2500)));
 
                 Map<String, Object> updateMap = new HashMap<>();
                 updateMap.put("500_Spin_Left", "5");
@@ -787,22 +788,22 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
 
             if (GlobalValue == 20) {
                 map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map1.put("amount", String.valueOf(100 - (Discount * 100)));
+                map1.put("amount", String.valueOf(100 - (Discount20 / 100 * 100)));
 
                 database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
             } else if (GlobalValue == 50) {
                 map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map1.put("amount", String.valueOf(250 - (Discount * 250)));
+                map1.put("amount", String.valueOf(250 - (Discount50 / 100 * 250)));
 
                 database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
             } else if (GlobalValue == 100) {
                 map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map1.put("amount", String.valueOf(500 - (Discount * 500)));
+                map1.put("amount", String.valueOf(500 - (Discount100 / 100 * 500)));
 
                 database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
             } else if (GlobalValue == 500) {
                 map1.put("Spin_Purchase", "5 Spin Of " + GlobalValue);
-                map1.put("amount", String.valueOf(2500 - (Discount * 2500)));
+                map1.put("amount", String.valueOf(2500 - (Discount500 / 100 * 2500)));
 
                 database.getReference().child("Wallet_Data_Entries").child(user.getUid()).child("Bank_Transaction").child("Spin_Purchase").child(ts).setValue(map1);
             }
