@@ -1,10 +1,8 @@
 package com.kc.earn_money;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,9 +45,8 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
     Uri uri;
     String status, Sender_Name, Sender_Upi_Id, Receiver_Upi_Id, Transaction_Id, Paid_Status, Receiver_Amount, key;
     SwipeRefreshLayout refresh;
-    public static final String GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
-    int GOOGLE_PAY_REQUEST_CODE = 123;
-    SharedPreferences preferences;
+    /*    public static final String GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
+        int GOOGLE_PAY_REQUEST_CODE = 123;*/ SharedPreferences preferences;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -189,7 +186,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
         });
     }
 
-    private static boolean isAppInstalled(Context context) {
+   /* private static boolean isAppInstalled(Context context) {
         try {
             context.getPackageManager().getApplicationInfo(Withdrawal_Request_Page.GOOGLE_PAY_PACKAGE_NAME, 0);
             return true;
@@ -211,7 +208,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
         } else {
             Toast.makeText(Withdrawal_Request_Page.this, "Please Install GPay", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 
     public void initiateUpiPayment(String name, String upiId, String transactionNote, String amount) {
         String currencyCode = "INR";
