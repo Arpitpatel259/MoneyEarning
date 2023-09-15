@@ -1,8 +1,10 @@
 package com.kc.earn_money;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -97,7 +99,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Log.d("DaaSnapshot", "onDataChange: " + dataSnapshot.toString());
-                    RequestData.add(new WithDrawModel(dataSnapshot.child("Sender_Name").getValue(String.class), dataSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Transaction_Id").getValue(String.class).toString(), dataSnapshot.child("Paid_Status").getValue(String.class).toString(), dataSnapshot.child("Receiver_Amount").getValue(String.class).toString()));
+                    RequestData.add(new WithDrawModel(dataSnapshot.child("ID").getValue(String.class), dataSnapshot.child("Sender_Name").getValue(String.class), dataSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Transaction_Id").getValue(String.class).toString(), dataSnapshot.child("Paid_Status").getValue(String.class).toString(), dataSnapshot.child("Receiver_Amount").getValue(String.class).toString()));
                 }
                 if (RequestData != null && RequestData.size() > 0) {
                     Withdrawal.setVisibility(View.VISIBLE);
@@ -124,7 +126,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
 
                     for (DataSnapshot requestSnapshot : userSnapshot.child("Request").getChildren()) {
 
-                        RequestData.add(new WithDrawModel(requestSnapshot.child("Sender_Name").getValue(String.class), requestSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), requestSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), requestSnapshot.child("Transaction_Id").getValue(String.class).toString(), requestSnapshot.child("Paid_Status").getValue(String.class).toString(), requestSnapshot.child("Receiver_Amount").getValue(String.class).toString()));
+                        RequestData.add(new WithDrawModel(requestSnapshot.child("ID").getValue(String.class), requestSnapshot.child("Sender_Name").getValue(String.class), requestSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), requestSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), requestSnapshot.child("Transaction_Id").getValue(String.class).toString(), requestSnapshot.child("Paid_Status").getValue(String.class).toString(), requestSnapshot.child("Receiver_Amount").getValue(String.class).toString()));
                     }
                 }
                 if (RequestData != null && RequestData.size() > 0) {
@@ -157,7 +159,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
             return new WorkAdapter.WorkViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.request_card, parent, false));
         }
 
-        @SuppressLint("SetTextI18n")
+        @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
         @Override
         public void onBindViewHolder(@NonNull WorkAdapter.WorkViewHolder holder, @SuppressLint("RecyclerView") int position) {
             holder.SenderName.setText("Money Sender Name :  " + getString(R.string.app_name));
@@ -166,6 +168,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
             holder.TransactionId.setText("Transaction Id : " + RequestData.get(position).getTransactionId());
             holder.Status.setText(RequestData.get(position).getStatus());
             holder.ReqAmount.setText("₹ " + RequestData.get(position).getReqAmount());
+            holder.id.setText("Id " + RequestData.get(position).getUserid());
 
             String StatusConvert = RequestData.get(position).getStatus().toString().toLowerCase();
             if (preferences.getString(Constants.Email, "").equals("arpit.vekariya123@gmail.com") && StatusConvert.contains("pending")) {
@@ -176,25 +179,44 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
                 holder.PaytoUser.setVisibility(View.GONE);
             }
 
-            holder.PaytoUser.setOnClickListener(v -> {
-                String name = RequestData.get(holder.getAdapterPosition()).getSenderName();
-                String upiId = RequestData.get(holder.getAdapterPosition()).getSenderUpiId();
-                String amount = RequestData.get(holder.getAdapterPosition()).getReqAmount();
-                String transId = RequestData.get(holder.getAdapterPosition()).getTransactionId();
+            String StatusTrans = holder.Status.getText().toString().toLowerCase();
+            if (StatusTrans.contains("success")) {
+                holder.Status.setBackground(getResources().getDrawable(R.drawable.mme_bg_btn_success));
+            } else {
+                holder.Status.setBackground(getResources().getDrawable(R.drawable.mme_bg_btn_unsuccess));
+            }
 
-                initiateUpiPayment(name, upiId, amount, transId);//holder.SenderName.getText().toString(), holder.SenderUpiId.getText().toString(), holder.ReqAmount.getText().toString(), holder.TransactionId.getText().toString());
+            String StatusShow = holder.Status.getText().toString().toLowerCase();
+            if (StatusShow.contains("pending")) {
+                holder.Status.setVisibility(View.GONE);
+            } else {
+                holder.Status.setBackground(getResources().getDrawable(R.drawable.mme_bg_btn_unsuccess));
+            }
+
+            holder.PaytoUser.setOnClickListener(v -> {
+                String name = RequestData.get(holder.getAdapterPosition()).getSenderName().trim();
+                String upiId = RequestData.get(holder.getAdapterPosition()).getSenderUpiId().trim();
+                String amount = RequestData.get(holder.getAdapterPosition()).getReqAmount().trim();
+                String transId = RequestData.get(holder.getAdapterPosition()).getTransactionId().trim();
+
+                Toast.makeText(Withdrawal_Request_Page.this, "Value " + name + " \n" + upiId + " \n" + amount + " \n" + transId, Toast.LENGTH_SHORT).show();
+                Log.d("d", "Value " + name + " \n" + upiId + " \n" + amount + " \n" + transId);
+                uri = getUpiPaymentUri(name, upiId, transId, amount);
+                payWithGPay();
+
             });
         }
 
         class WorkViewHolder extends RecyclerView.ViewHolder {
 
             CardView OnlineWithdraw;
-            TextView SenderName, ReceiverName, SenderUpiId, TransactionId, Status, ReqAmount, PaytoUser;
+            TextView SenderName, ReceiverName, SenderUpiId, TransactionId, Status, ReqAmount, PaytoUser, id;
 
             WorkViewHolder(View view) {
                 super(view);
 
                 OnlineWithdraw = view.findViewById(R.id.OnlineWithdraw);
+                id = view.findViewById(R.id.Req_ReceiverUpi);
                 SenderName = view.findViewById(R.id.Req_SenderName);
                 ReceiverName = view.findViewById(R.id.Req_ReceiverName);
                 SenderUpiId = view.findViewById(R.id.Rec_SenderUpiId);
@@ -226,17 +248,18 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
         });
     }
 
-  /*  private static boolean isAppInstalled(Context context) {
+    private static boolean isAppInstalled(Context context) {
         try {
-            context.getPackageManager().getApplicationInfo(Withdrawal_Request_Page.GOOGLE_PAY_PACKAGE_NAME, 0);
+            context.getPackageManager().getApplicationInfo(GOOGLE_PAY_PACKAGE_NAME, 0);
             return true;
         } catch (PackageManager.NameNotFoundException e) {
+            Log.d("Google", "isAppInstalled: " + e);
             return false;
         }
     }
 
-    private static Uri getUpiPaymentUri(String S_Name, String S_UPI, String Amount, String S_Trans) {
-        return new Uri.Builder().scheme("upi").authority("pay").appendQueryParameter("pa", S_UPI).appendQueryParameter("pn", S_Name).appendQueryParameter("tn", "Withdrawal").appendQueryParameter("am", Amount).appendQueryParameter("cu", "INR").appendQueryParameter("tr", S_Trans).build();
+    private static Uri getUpiPaymentUri(String S_Name, String S_UPI, String S_Trans, String Amount) {
+        return new Uri.Builder().scheme("upi").authority("pay").appendQueryParameter("pa", S_UPI).appendQueryParameter("pn", S_Name).appendQueryParameter("tn", "Withdrawal").appendQueryParameter("am", Amount).appendQueryParameter("cu", "INR").build();
     }
 
     private void payWithGPay() {
@@ -246,25 +269,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
             intent.setPackage(GOOGLE_PAY_PACKAGE_NAME);
             startActivityForResult(intent, GOOGLE_PAY_REQUEST_CODE);
         } else {
-            Toast.makeText(Withdrawal_Request_Page.this, "Please Install GPay", Toast.LENGTH_SHORT).show();
-        }
-    }*/
-
-    public void initiateUpiPayment(String name, String upiId, String transactionNote, String amount) {
-        String currencyCode = "INR";
-
-        // Create a UPI URI
-        String upiUri = "upi://pay?pa=" + upiId + "&pn=" + name + "&tn=" + transactionNote + "&am=" + amount + "&cu=" + currencyCode;
-
-        // Create an Intent
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(upiUri));
-
-        // Check if an app to handle the Intent is available
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(intent, 0);
-        } else {
-            Toast.makeText(this, "No UPI app found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Install Google Pay", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -277,23 +282,17 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
         Map<String, Object> map = new HashMap<>();
 
         if ((RESULT_OK == resultCode) && status.equals("success")) {
-            map.put("Paid_Status", "Received");
+            map.put("Paid_Status", "success");
             database.getReference().child("WithDrawal").child(user.getUid()).child("Request").child(key).updateChildren(map);
-            database.getReference().child("WithDrawal").child(user.getUid()).child("Request").child("RequestMoney").setValue(false);
+            database.getReference().child("WithDrawal").child(user.getUid()).child("RequestMoney").setValue(false);
 
             Toast.makeText(this, "Transaction Sucessful", Toast.LENGTH_SHORT).show();
-        } else if (status.equals("Pending")) {
-            map.put("Paid_Status", "Pending");
-            database.getReference().child("WithDrawal").child(user.getUid()).child("Request").child(key).updateChildren(map);
-            database.getReference().child("WithDrawal").child(user.getUid()).child("Request").child("RequestMoney").setValue(false);
-
-            Toast.makeText(this, "Transaction Is Still Pending", Toast.LENGTH_SHORT).show();
         } else {
-            map.put("Paid_Status", "Failed");
+            map.put("Paid_Status", "failed");
             database.getReference().child("WithDrawal").child(user.getUid()).child("Request").child(key).updateChildren(map);
-            database.getReference().child("WithDrawal").child(user.getUid()).child("Request").child("RequestMoney").setValue(true);
+            database.getReference().child("WithDrawal").child(user.getUid()).child("RequestMoney").setValue(true);
 
-            Toast.makeText(this, "Transaction Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Transaction Failed \n Wait For More Time", Toast.LENGTH_SHORT).show();
         }
     }
 

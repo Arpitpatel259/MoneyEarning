@@ -19,7 +19,7 @@
     <string name="phone_pe">Phone Pay</string>
     <string name="paytm">Paytm</string>
     <string name="nav_mail">example@gmail.com</string>
-    <string name="enter_phone_pe_number_upi_id">Enter Phone Pay Number/UPI ID</string>
+    <string name="enter_phone_pe_number_upi_id">Enter Phone Pay UPI ID</string>
     <string name="rupis">₹ </string>
     <string name="_20">₹ 20</string>
     <string name="spin_left"> 5 Spin Left</string>

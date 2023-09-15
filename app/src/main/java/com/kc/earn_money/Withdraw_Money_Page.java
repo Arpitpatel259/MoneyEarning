@@ -61,19 +61,19 @@ public class Withdraw_Money_Page extends AppCompatActivity {
 
         phonePay = findViewById(R.id.llPhonePe);
         phonePay.setOnClickListener(v -> {
-            UpiID.setHint("Enter Phone Pay Number/UPI ID");
+            UpiID.setHint("Enter Phone Pay UPI ID");
             UpiID.setHintTextColor(getColor(R.color.red));
         });
 
         gPay = findViewById(R.id.llGPay);
         gPay.setOnClickListener(v -> {
-            UpiID.setHint("Enter Google Pay Number/UPI ID");
+            UpiID.setHint("Enter Google Pay UPI ID");
             UpiID.setHintTextColor(getColor(R.color.red));
         });
 
         Paytm = findViewById(R.id.llPaytm);
         Paytm.setOnClickListener(v -> {
-            UpiID.setHint("Enter Paytm Number/UPI ID");
+            UpiID.setHint("Enter Paytm UPI ID");
             UpiID.setHintTextColor(getColor(R.color.red));
         });
 
