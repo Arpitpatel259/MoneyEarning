@@ -45,8 +45,9 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
     Uri uri;
     String status, Sender_Name, Sender_Upi_Id, Receiver_Upi_Id, Transaction_Id, Paid_Status, Receiver_Amount, key;
     SwipeRefreshLayout refresh;
-    /*    public static final String GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
-        int GOOGLE_PAY_REQUEST_CODE = 123;*/ SharedPreferences preferences;
+    public static final String GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
+    int GOOGLE_PAY_REQUEST_CODE = 123;
+    SharedPreferences preferences;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -81,16 +82,50 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
         Withdrawal.setHasFixedSize(true);
 
         adapter = new WorkAdapter();
-        getWithdrawalRequest();
+
+        if (preferences.getString(Constants.Email, "").equals("arpit.vekariya123@gmail.com")) {
+            getWithdrawalRequest();
+        } else {
+            getWithdrawalRequestForSingleUser();
+        }
+
     }
 
-    private void getWithdrawalRequest() {
+    private void getWithdrawalRequestForSingleUser() {
         FirebaseDatabase.getInstance().getReference().child("WithDrawal").child(user.getUid()).child("Request").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Log.d("DaaSnapshot", "onDataChange: " + dataSnapshot.toString());
                     RequestData.add(new WithDrawModel(dataSnapshot.child("Sender_Name").getValue(String.class), dataSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Transaction_Id").getValue(String.class).toString(), dataSnapshot.child("Paid_Status").getValue(String.class).toString(), dataSnapshot.child("Receiver_Amount").getValue(String.class).toString()));
+                }
+                if (RequestData != null && RequestData.size() > 0) {
+                    Withdrawal.setVisibility(View.VISIBLE);
+                    noData.setVisibility(View.GONE);
+                } else {
+                    Withdrawal.setVisibility(View.GONE);
+                    noData.setVisibility(View.VISIBLE);
+                }
+                Withdrawal.setAdapter(adapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getWithdrawalRequest() {
+        FirebaseDatabase.getInstance().getReference().child("WithDrawal").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot userSnapshot : snapshot.getChildren()) {
+
+                    for (DataSnapshot requestSnapshot : userSnapshot.child("Request").getChildren()) {
+
+                        RequestData.add(new WithDrawModel(requestSnapshot.child("Sender_Name").getValue(String.class), requestSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), requestSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), requestSnapshot.child("Transaction_Id").getValue(String.class).toString(), requestSnapshot.child("Paid_Status").getValue(String.class).toString(), requestSnapshot.child("Receiver_Amount").getValue(String.class).toString()));
+                    }
                 }
                 if (RequestData != null && RequestData.size() > 0) {
                     Withdrawal.setVisibility(View.VISIBLE);
@@ -128,7 +163,6 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
             holder.SenderName.setText("Money Sender Name :  " + getString(R.string.app_name));
             holder.ReceiverName.setText("Money Receiver Name :  " + RequestData.get(position).getSenderName());
             holder.SenderUpiId.setText("To : " + RequestData.get(position).getSenderUpiId());
-            holder.ReceiverUpiId.setText("From : " + RequestData.get(position).getReceiverUpiId());
             holder.TransactionId.setText("Transaction Id : " + RequestData.get(position).getTransactionId());
             holder.Status.setText(RequestData.get(position).getStatus());
             holder.ReqAmount.setText("₹ " + RequestData.get(position).getReqAmount());
@@ -142,13 +176,20 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
                 holder.PaytoUser.setVisibility(View.GONE);
             }
 
-            holder.PaytoUser.setOnClickListener(v -> initiateUpiPayment(RequestData.get(position).getSenderName(), RequestData.get(position).getSenderUpiId(), RequestData.get(position).getReqAmount(), RequestData.get(position).getTransactionId()));
+            holder.PaytoUser.setOnClickListener(v -> {
+                String name = RequestData.get(holder.getAdapterPosition()).getSenderName();
+                String upiId = RequestData.get(holder.getAdapterPosition()).getSenderUpiId();
+                String amount = RequestData.get(holder.getAdapterPosition()).getReqAmount();
+                String transId = RequestData.get(holder.getAdapterPosition()).getTransactionId();
+
+                initiateUpiPayment(name, upiId, amount, transId);//holder.SenderName.getText().toString(), holder.SenderUpiId.getText().toString(), holder.ReqAmount.getText().toString(), holder.TransactionId.getText().toString());
+            });
         }
 
         class WorkViewHolder extends RecyclerView.ViewHolder {
 
             CardView OnlineWithdraw;
-            TextView SenderName, ReceiverName, SenderUpiId, ReceiverUpiId, TransactionId, Status, ReqAmount, PaytoUser;
+            TextView SenderName, ReceiverName, SenderUpiId, TransactionId, Status, ReqAmount, PaytoUser;
 
             WorkViewHolder(View view) {
                 super(view);
@@ -157,7 +198,6 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
                 SenderName = view.findViewById(R.id.Req_SenderName);
                 ReceiverName = view.findViewById(R.id.Req_ReceiverName);
                 SenderUpiId = view.findViewById(R.id.Rec_SenderUpiId);
-                ReceiverUpiId = view.findViewById(R.id.Req_ReceiverUpi);
                 TransactionId = view.findViewById(R.id.Req_SenderTransId);
                 Status = view.findViewById(R.id.Withdraw_Status);
                 ReqAmount = view.findViewById(R.id.TotalWithdrawAmount);
@@ -186,7 +226,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
         });
     }
 
-   /* private static boolean isAppInstalled(Context context) {
+  /*  private static boolean isAppInstalled(Context context) {
         try {
             context.getPackageManager().getApplicationInfo(Withdrawal_Request_Page.GOOGLE_PAY_PACKAGE_NAME, 0);
             return true;

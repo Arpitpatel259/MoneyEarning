@@ -83,10 +83,11 @@
                         android:fontFamily="@font/regular"
                         android:includeFontPadding="false"
                         android:padding="5dp"
-                        android:textColor="@color/black"
                         android:text="From : example@upi"
+                        android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textStyle="bold"
+                        android:visibility="gone"
                         tools:ignore="HardcodedText,SmallSp" />
 
                     <TextView
@@ -162,7 +163,7 @@
                         android:fontFamily="@font/regular"
                         android:maxLength="10"
                         android:padding="10dp"
-                        android:text="Pay"
+                        android:text="Pay Money"
                         android:textColor="@color/black"
                         android:textSize="7sp"
                         android:textStyle="bold"

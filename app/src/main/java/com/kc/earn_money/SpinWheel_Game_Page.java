@@ -248,22 +248,22 @@ public class SpinWheel_Game_Page extends AppCompatActivity {
                 ll100App.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.mme_bg_app_unselected, null));
                 ll500App.setBackgroundDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.mme_bg_app_unselected, null));
                 Toast.makeText(SpinWheel_Game_Page.this, "Please Select Amount", Toast.LENGTH_SHORT).show();
-            } else if (is20Select && !isSpinning) {
+            } else if (is20Select && !isSpinning && SpinCounter20 > 0) {
                 mediaPlayer = MediaPlayer.create(this, R.raw.ui_sound1);
                 mediaPlayer.start();
                 spinWheel(20);
                 isSpinning = true;
-            } else if (is50Select && !isSpinning) {
+            } else if (is50Select && !isSpinning && SpinCounter50 > 0) {
                 mediaPlayer = MediaPlayer.create(this, R.raw.ui_sound);
                 mediaPlayer.start();
                 spinWheel(50);
                 isSpinning = true;
-            } else if (is100Select && !isSpinning) {
+            } else if (is100Select && !isSpinning && SpinCounter100 > 0) {
                 mediaPlayer = MediaPlayer.create(this, R.raw.ui_sound1);
                 mediaPlayer.start();
                 spinWheel(100);
                 isSpinning = true;
-            } else if (is500Select && !isSpinning) {
+            } else if (is500Select && !isSpinning && SpinCounter500 > 0) {
                 mediaPlayer = MediaPlayer.create(this, R.raw.ui_sound);
                 mediaPlayer.start();
                 spinWheel(500);
