@@ -302,7 +302,6 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
             database.getReference().child("WithDrawal").child(UserId).child("RequestMoney").setValue(true);
 
             Toast.makeText(this, "Transaction Failed \n Wait For More Time", Toast.LENGTH_SHORT).show();
-
         }
     }
 
