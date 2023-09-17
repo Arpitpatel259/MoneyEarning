@@ -2,27 +2,37 @@ package com.kc.earn_money.Model;
 
 public class WithDrawModel {
 
-    String Userid, SenderName, SenderUpiId, ReceiverUpiId, TransactionId, Status, ReqAmount;
+    String PyId, SenderName, SenderUpiId, ReceiverUpiId, TransactionId, Status, ReqAmount,UserId;
 
     public WithDrawModel() {
     }
 
-    public WithDrawModel(String userid, String senderName, String senderUpiId, String receiverUpiId, String transactionId, String status, String reqAmount) {
-        Userid = userid;
+
+    public WithDrawModel(String pyId, String senderName, String senderUpiId, String receiverUpiId, String transactionId, String status, String reqAmount, String userId) {
+        PyId = pyId;
         SenderName = senderName;
         SenderUpiId = senderUpiId;
         ReceiverUpiId = receiverUpiId;
         TransactionId = transactionId;
         Status = status;
         ReqAmount = reqAmount;
+        UserId = userId;
     }
 
-    public String getUserid() {
-        return Userid;
+    public String getUserId() {
+        return UserId;
     }
 
-    public void setUserid(String userid) {
-        Userid = userid;
+    public void setUserId(String userId) {
+        UserId = userId;
+    }
+
+    public String getPyId() {
+        return PyId;
+    }
+
+    public void setPyId(String pyId) {
+        PyId = pyId;
     }
 
     public String getSenderName() {

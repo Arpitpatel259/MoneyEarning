@@ -45,7 +45,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
     WorkAdapter adapter;
     FirebaseDatabase database;
     Uri uri;
-    String status, Sender_Name, Sender_Upi_Id, Receiver_Upi_Id, Transaction_Id, Paid_Status, Receiver_Amount, key;
+    String status, Sender_Name, Sender_Upi_Id, Receiver_Upi_Id, Transaction_Id, Paid_Status, Receiver_Amount, key, UpdateKey, UserId;
     SwipeRefreshLayout refresh;
     public static final String GOOGLE_PAY_PACKAGE_NAME = "com.google.android.apps.nbu.paisa.user";
     int GOOGLE_PAY_REQUEST_CODE = 123;
@@ -85,7 +85,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
 
         adapter = new WorkAdapter();
 
-        if (preferences.getString(Constants.Email, "").equals("arpit.vekariya123@gmail.com")) {
+        if (preferences.getString(Constants.Email, "").equals(Constants.Email_Pay)) {
             getWithdrawalRequest();
         } else {
             getWithdrawalRequestForSingleUser();
@@ -95,11 +95,13 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
 
     private void getWithdrawalRequestForSingleUser() {
         FirebaseDatabase.getInstance().getReference().child("WithDrawal").child(user.getUid()).child("Request").addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                RequestData.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     Log.d("DaaSnapshot", "onDataChange: " + dataSnapshot.toString());
-                    RequestData.add(new WithDrawModel(dataSnapshot.child("ID").getValue(String.class), dataSnapshot.child("Sender_Name").getValue(String.class), dataSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Transaction_Id").getValue(String.class).toString(), dataSnapshot.child("Paid_Status").getValue(String.class).toString(), dataSnapshot.child("Receiver_Amount").getValue(String.class).toString()));
+                    RequestData.add(new WithDrawModel(dataSnapshot.child("ID").getValue(String.class), dataSnapshot.child("Sender_Name").getValue(String.class), dataSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), dataSnapshot.child("Transaction_Id").getValue(String.class).toString(), dataSnapshot.child("Paid_Status").getValue(String.class).toString(), dataSnapshot.child("Receiver_Amount").getValue(String.class).toString(), user.getUid().toString()));
                 }
                 if (RequestData != null && RequestData.size() > 0) {
                     Withdrawal.setVisibility(View.VISIBLE);
@@ -109,6 +111,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
                     noData.setVisibility(View.VISIBLE);
                 }
                 Withdrawal.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -119,14 +122,17 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
     }
 
     private void getWithdrawalRequest() {
-        FirebaseDatabase.getInstance().getReference().child("WithDrawal").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().child("WithDrawal").addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                RequestData.clear();
                 for (DataSnapshot userSnapshot : snapshot.getChildren()) {
 
                     for (DataSnapshot requestSnapshot : userSnapshot.child("Request").getChildren()) {
 
-                        RequestData.add(new WithDrawModel(requestSnapshot.child("ID").getValue(String.class), requestSnapshot.child("Sender_Name").getValue(String.class), requestSnapshot.child("Sender_Upi_Id").getValue(String.class).toString(), requestSnapshot.child("Receiver_Upi_Id").getValue(String.class).toString(), requestSnapshot.child("Transaction_Id").getValue(String.class).toString(), requestSnapshot.child("Paid_Status").getValue(String.class).toString(), requestSnapshot.child("Receiver_Amount").getValue(String.class).toString()));
+                        RequestData.add(new WithDrawModel(requestSnapshot.child("ID").getValue(String.class), requestSnapshot.child("Sender_Name").getValue(String.class), requestSnapshot.child("Sender_Upi_Id").getValue(String.class), requestSnapshot.child("Receiver_Upi_Id").getValue(String.class), requestSnapshot.child("Transaction_Id").getValue(String.class), requestSnapshot.child("Paid_Status").getValue(String.class), requestSnapshot.child("Receiver_Amount").getValue(String.class), userSnapshot.getKey().toString()));
+                        Log.d("d", "Paid Status ----===== " + requestSnapshot.child("Paid_Status").getValue(String.class).toString());
                     }
                 }
                 if (RequestData != null && RequestData.size() > 0) {
@@ -137,6 +143,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
                     noData.setVisibility(View.VISIBLE);
                 }
                 Withdrawal.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -168,10 +175,10 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
             holder.TransactionId.setText("Transaction Id : " + RequestData.get(position).getTransactionId());
             holder.Status.setText(RequestData.get(position).getStatus());
             holder.ReqAmount.setText("₹ " + RequestData.get(position).getReqAmount());
-            holder.id.setText("Id " + RequestData.get(position).getUserid());
+            holder.id.setText("Id " + RequestData.get(position).getPyId());
 
             String StatusConvert = RequestData.get(position).getStatus().toString().toLowerCase();
-            if (preferences.getString(Constants.Email, "").equals("arpit.vekariya123@gmail.com") && StatusConvert.contains("pending")) {
+            if (preferences.getString(Constants.Email, "").equals(Constants.Email_Pay) && StatusConvert.contains("pending")) {
                 holder.PaytoUser.setVisibility(View.VISIBLE);
             } else if (StatusConvert.contains("failed")) {
                 holder.PaytoUser.setVisibility(View.VISIBLE);
@@ -198,6 +205,8 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
                 String upiId = RequestData.get(holder.getAdapterPosition()).getSenderUpiId().trim();
                 String amount = RequestData.get(holder.getAdapterPosition()).getReqAmount().trim();
                 String transId = RequestData.get(holder.getAdapterPosition()).getTransactionId().trim();
+                UpdateKey = RequestData.get(holder.getAdapterPosition()).getPyId();
+                UserId = RequestData.get(holder.getAdapterPosition()).getUserId();
 
                 Toast.makeText(Withdrawal_Request_Page.this, "Value " + name + " \n" + upiId + " \n" + amount + " \n" + transId, Toast.LENGTH_SHORT).show();
                 Log.d("d", "Value " + name + " \n" + upiId + " \n" + amount + " \n" + transId);
@@ -283,16 +292,17 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
 
         if ((RESULT_OK == resultCode) && status.equals("success")) {
             map.put("Paid_Status", "success");
-            database.getReference().child("WithDrawal").child(user.getUid()).child("Request").child(key).updateChildren(map);
-            database.getReference().child("WithDrawal").child(user.getUid()).child("RequestMoney").setValue(false);
+            database.getReference().child("WithDrawal").child(UserId).child("Request").child(UpdateKey).updateChildren(map);
+            database.getReference().child("WithDrawal").child(UserId).child("RequestMoney").setValue(false);
 
             Toast.makeText(this, "Transaction Sucessful", Toast.LENGTH_SHORT).show();
         } else {
             map.put("Paid_Status", "failed");
-            database.getReference().child("WithDrawal").child(user.getUid()).child("Request").child(key).updateChildren(map);
-            database.getReference().child("WithDrawal").child(user.getUid()).child("RequestMoney").setValue(true);
+            database.getReference().child("WithDrawal").child(UserId).child("Request").child(UpdateKey).updateChildren(map);
+            database.getReference().child("WithDrawal").child(UserId).child("RequestMoney").setValue(true);
 
             Toast.makeText(this, "Transaction Failed \n Wait For More Time", Toast.LENGTH_SHORT).show();
+
         }
     }
 
