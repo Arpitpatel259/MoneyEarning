@@ -42,6 +42,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseUser user;
     ArrayList<WithDrawModel> RequestData = new ArrayList<>();
+    String Email = Constants.Email_Pay;
     WorkAdapter adapter;
     FirebaseDatabase database;
     Uri uri;
@@ -85,7 +86,7 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
 
         adapter = new WorkAdapter();
 
-        if (preferences.getString(Constants.Email, "").equals(Constants.Email_Pay)) {
+        if (preferences.getString(Constants.Email, "").equals(Email)) {
             getWithdrawalRequest();
         } else {
             getWithdrawalRequestForSingleUser();
@@ -178,9 +179,9 @@ public class Withdrawal_Request_Page extends AppCompatActivity {
             holder.id.setText("Id " + RequestData.get(position).getPyId());
 
             String StatusConvert = RequestData.get(position).getStatus().toString().toLowerCase();
-            if (preferences.getString(Constants.Email, "").equals(Constants.Email_Pay) && StatusConvert.contains("pending")) {
+            if (preferences.getString(Constants.Email, "").equals(Email) && StatusConvert.contains("pending")) {
                 holder.PaytoUser.setVisibility(View.VISIBLE);
-            } else if (StatusConvert.contains("failed")) {
+            } else if (preferences.getString(Constants.Email, "").equals(Email) && StatusConvert.contains("failed")) {
                 holder.PaytoUser.setVisibility(View.VISIBLE);
             } else {
                 holder.PaytoUser.setVisibility(View.GONE);
