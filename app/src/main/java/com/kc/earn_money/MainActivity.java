@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 if (dataSnapshot.child("Discount_500").getValue(String.class) != null) {
                     Constants.Discount_500 = dataSnapshot.child("Discount_500").getValue(String.class);
                 }
+
+                /*Change this for loop*/
                 if (dataSnapshot.child("Email_id").getValue(String.class) != null) {
                     Constants.Email_Pay = dataSnapshot.child("Email_id").getValue(String.class);
                 }

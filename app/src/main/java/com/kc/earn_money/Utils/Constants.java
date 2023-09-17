@@ -26,5 +26,7 @@ public class Constants {
     public static String Discount_50 = "";
     public static String Discount_100 = "";
     public static String Discount_500 = "";
+
+    /*Change this Constant*/
     public static String Email_Pay = "";
 }
