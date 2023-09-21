@@ -26,7 +26,7 @@ import com.kc.earn_money.Model.PayAmountRecordModel;
 
 import java.util.ArrayList;
 
-public class Bank_Tansaction_Page extends AppCompatActivity {
+public class Bank_Transaction_Page extends AppCompatActivity {
     ImageView imgViewBack8;
     TextView noData1;
     RecyclerView circular_Transaction, Circular_Bank;
@@ -51,7 +51,7 @@ public class Bank_Tansaction_Page extends AppCompatActivity {
 
         refresh = findViewById(R.id.swipe_refresh1);
         refresh.setOnRefreshListener(() -> {
-            Intent i = new Intent(Bank_Tansaction_Page.this, Bank_Tansaction_Page.class);
+            Intent i = new Intent(Bank_Transaction_Page.this, Bank_Transaction_Page.class);
             finish();
             overridePendingTransition(0, 0);
             startActivity(i);

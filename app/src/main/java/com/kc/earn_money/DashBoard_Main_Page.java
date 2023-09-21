@@ -130,7 +130,7 @@ public class DashBoard_Main_Page extends AppCompatActivity {
         });
 
         llBank.setOnClickListener(v -> {
-            Intent i = new Intent(DashBoard_Main_Page.this, Bank_Tansaction_Page.class);
+            Intent i = new Intent(DashBoard_Main_Page.this, Bank_Transaction_Page.class);
             startActivity(i);
         });
 

@@ -42,7 +42,7 @@
             android:name=".Privacy_Policy_Page"
             android:exported="true" />
         <activity
-            android:name=".Bank_Tansaction_Page"
+            android:name=".Bank_Transaction_Page"
             android:exported="true" />
         <activity
             android:name=".Register_Activity_Page"
