@@ -27,7 +27,7 @@ public class Register_Activity_Page extends AppCompatActivity {
     ImageView imageView;
     SharedPreferences preferences;
     EditText etRegEmail, etRegPassword, etRegName;
-    Button btnRegister, btnloginbtn;
+    Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
